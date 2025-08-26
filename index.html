@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Clinic - Home</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/T7BxxLm.jpeg" alt="Clinic Logo" style="height:60px; border-radius:100px;">
+     <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="contact.html">Contact</a>
+      <!-- <a href="confirm-orders.html">Orders</a> -->
+    </nav>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+  </header>
+
+  <section class="hero">
+    <img src="https://i.imgur.com/u8DgVyY.jpeg" alt="Clinic" class="hero-img">
+    <div class="hero-content">
+      <h2>Welcome to Our Clinic</h2>
+      <p>Providing quality healthcare with compassion and care.</p>
+      <a href="services.html" class="btn">View Services</a>
+    </div>
+  </section>
+
+ <main class="container">
+    <h2 style="text-align:center; color:#023e8a;">Why Choose Us?</h2>
+    <p style="text-align:center;">We are committed to providing excellent healthcare services, ensuring that every patient receives personalized attention and treatment.</p>
+  </main>
+
+ <!-- Testimonials Section -->
+ <center>
+<section class="testimonials container">
+   <h2 style="text-align:center; color:#023e8a;">Testimonies</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial-card" id="testimonialCard"></div>
+    <div class="slider-controls">
+      <button id="prevBtn">⟨</button>
+      <button id="nextBtn">⟩</button>
+    </div>
+  </div>
+</section>
+
+<script src="testimonies.js"></script>
+<script>
+  let currentIndex = 0;
+  const card = document.getElementById("testimonialCard");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function getRandomStars() {
+    const starsCount = Math.floor(Math.random() * 2) + 4; // 4 or 5 stars
+    return '★'.repeat(starsCount) + '☆'.repeat(5 - starsCount);
+  }
+
+  function showTestimony(index) {
+    card.innerHTML = `
+      <p>${testimonies[index]}</p>
+      <div style="margin-top:8px; font-size:20px; color:#FFD700;">${getRandomStars()}</div>
+    `;
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + testimonies.length) % testimonies.length;
+    showTestimony(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % testimonies.length;
+    showTestimony(currentIndex);
+  });
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % testimonies.length;
+    showTestimony(currentIndex);
+  }, 5000);
+
+  showTestimony(currentIndex);
+</script>
+</center>
+
+ 
+
+      <footer>
+      <p>© 2005 Our Clinic | All Rights Reserved</p>
+      <div class="social-links">
+        <a href="https://wa.me/+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
+        <a href="viber://chat?number=%2B+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
+        <a href="https://t.me/YourTelegramUsername" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
+      </div>
+    </footer>
+</body>
+</html>

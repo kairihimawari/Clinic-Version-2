@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Clinic - Services</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<header>
+  <h1>Our Clinic</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html">Our Team</a>
+    <a href="contact.html">Contact</a>
+    <!-- Orders page hidden -->
+  </nav>
+  <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+</header>
+
+  <main class="container">
+    <h2 style="text-align:center; color:#023e8a;">Available Medicines</h2>
+    <div class="medicine-grid">
+
+      <!-- SET 1 -->
+      <div class="medicine-grid-item">
+        <img src="https://i.imgur.com/1UyP6Ry.jpeg" alt="Set 1">
+        <strong>Set 1</strong>
+        <span class="price">₱3,500</span>
+        <small>6pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>6pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
+        <button class="gcash-btn" onclick="toggleForm(this, 'Set 1', 3500)">Order Now</button>
+        <form class="order-form" onsubmit="submitOrder(event)">
+          <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="text" name="contactNumber" placeholder="Contact Number" required>
+          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
+          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
+          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
+          <button type="submit">Confirm Order</button>
+        </form>
+      </div>
+
+      <!-- Set 2 -->
+      <div class="medicine-grid-item">
+        <img src="https://i.imgur.com/FI8eURD.jpeg" alt="Set 2">
+        <strong>Set 2</strong>
+        <span class="price">₱4,500</span>
+        <small>8pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>8pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
+        <button class="gcash-btn" onclick="toggleForm(this, 'Set 2', 4500)">Order Now</button>
+        <form class="order-form" onsubmit="submitOrder(event)">
+          <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="text" name="contactNumber" placeholder="Contact Number" required>
+          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
+          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
+          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
+          <button type="submit">Confirm Order</button>
+        </form>
+      </div>
+
+      <!-- Set 3 -->
+      <div class="medicine-grid-item">
+        <img src="https://i.imgur.com/YQVXxK8.jpeg" alt="Set 3">
+        <strong>Set 3</strong>
+        <span class="price">₱5,800</span>
+        <small>10pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>10pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
+        <button class="gcash-btn" onclick="toggleForm(this, 'Set 3', 5800)">Order Now</button>
+        <form class="order-form" onsubmit="submitOrder(event)">
+          <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="text" name="contactNumber" placeholder="Contact Number" required>
+          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
+          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
+          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
+          <button type="submit">Confirm Order</button>
+        </form>
+      </div>
+
+      <!-- Set 4 -->
+      <div class="medicine-grid-item">
+        <img src="https://i.imgur.com/LtJTb4E.jpeg/" alt="Set 4">
+        <strong>Set 4</strong>
+        <span class="price">₱6,800</span>
+        <small>12pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>12pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
+        <button class="gcash-btn" onclick="toggleForm(this, 'Set 4', 6800)">Order Now</button>
+        <form class="order-form" onsubmit="submitOrder(event)">
+          <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="text" name="contactNumber" placeholder="Contact Number" required>
+          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
+          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
+          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
+          <button type="submit">Confirm Order</button>
+        </form>
+      </div>
+
+      <!-- Set 5 -->
+      <div class="medicine-grid-item">
+        <img src="https://i.imgur.com/0ZLFwci.jpeg" alt="Set 5">
+        <strong>Set 5</strong>
+        <span class="price">₱7,800</span>
+        <small>14pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>14pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
+         <button class="gcash-btn" onclick="toggleForm(this, 'Set 5', 7800)">Order Now</button>
+        <form class="order-form" onsubmit="submitOrder(event)">
+          <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="text" name="contactNumber" placeholder="Contact Number" required>
+          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
+          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
+          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
+          <button type="submit">Confirm Order</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+      <footer>
+      <p>© 2025 Our Clinic | All Rights Reserved</p>
+      <div class="social-links">
+        <a href="https://wa.me/1234567890" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
+        <a href="viber://chat?number=%2B1234567890" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
+        <a href="https://t.me/YourTelegramUsername" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
+      </div>
+    </footer>
+
+
+  <div id="successMessage" class="success-message"></div>
+
+  <script>
+    function toggleForm(button, medicineName, price) {
+      document.querySelectorAll('.order-form').forEach(form => form.style.display = 'none');
+      const form = button.nextElementSibling;
+      form.style.display = 'block';
+      form.dataset.medicine = medicineName;
+      form.dataset.price = price;
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+      const form = event.target;
+      const medicineName = form.dataset.medicine;
+      const price = form.dataset.price;
+      const fullName = form.fullName.value;
+      const contactNumber = form.contactNumber.value;
+      const address = form.address.value;
+      const referenceNumber = form.referenceNumber.value;
+
+      let orders = JSON.parse(localStorage.getItem('orders')) || [];
+      orders.push({
+        medicine: medicineName,
+        price: price,
+        fullName: fullName,
+        contact: contactNumber,
+        address: address,
+        reference: referenceNumber,
+        status: 'Pending'
+      });
+      localStorage.setItem('orders', JSON.stringify(orders));
+
+      form.style.display = 'none';
+      const successMessage = document.getElementById('successMessage');
+      successMessage.textContent = `✅ Order Placed for ${medicineName} - ₱${price}`;
+      successMessage.style.display = 'block';
+      setTimeout(() => successMessage.style.display = 'none', 4000);
+      form.reset();
+    }
+  </script>
+  <script>
+  document.addEventListener("keydown", function(e) {
+    // CTRL + O shortcut
+    if (e.ctrlKey && e.key.toLowerCase() === "o") {
+      e.preventDefault();
+      window.open("confirm-orders.html", "_blank");
+    }
+  });
+</script>
+</body>
+</html>

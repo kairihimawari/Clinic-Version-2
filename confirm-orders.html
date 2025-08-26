@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Orders</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <header>
+    <h1>Our Clinic</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="contact.html">Contact</a>
+      <a href="confirm-orders.html">Orders</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+  </header>
+
+  <main class="container">
+    <h2 style="text-align:center; color:#023e8a;">Pending Orders</h2>
+    <div id="ordersList" class="medicine-grid"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Our Clinic | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function loadOrders() {
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      const container = document.getElementById('ordersList');
+      container.innerHTML = '';
+
+      if (orders.length === 0) {
+        container.innerHTML = '<p style="text-align:center;">No orders found.</p>';
+        return;
+      }
+
+      orders.forEach(order => {
+        const card = document.createElement('div');
+        card.className = 'medicine-grid-item';
+        card.innerHTML = `
+          <strong>${order.medicine}</strong>
+          <span class="price">₱${order.price}</span>
+          <p><b>Name:</b> ${order.fullName}</p>
+          <p><b>Contact:</b> ${order.contact}</p>
+          <p><b>Address:</b> ${order.address}</p>
+          <p><b>Reference:</b> ${order.reference}</p>
+          <p><b>Status:</b> ${order.status}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    window.onload = loadOrders;
+  </script>
+</body>
+</html>
