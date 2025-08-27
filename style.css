@@ -76,11 +76,12 @@ header nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;    /* full image, no cropping */
+  object-position: center;
   z-index: 1;
   filter: brightness(0.6);
+  background: linear-gradient(to bottom, #00A6FF, #5CE4FF); /* dark blue → white */
 }
-
 .btn {
   display: inline-block;
   padding: 12px 25px;
@@ -100,6 +101,44 @@ header nav a:hover {
   margin: auto;
   padding: 30px 0;
 }
+
+.testimonial-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.testimonial-card {
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-style: italic;
+}
+
+.slider-controls {
+  margin-top: 15px;
+}
+
+.slider-controls button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider-controls button:hover {
+  background: #45a049;
+}
+
 
 /* --- Medicine Grid --- */
 .medicine-grid {
