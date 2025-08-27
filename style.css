@@ -73,8 +73,7 @@ header nav a:hover {
   justify-content: center;
   gap: 10px; /* smaller gap */
   padding: 15px 0;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0px solid #ddd;
   flex-wrap: wrap; /* allow wrapping if very small screen */
 }
 
