@@ -10,7 +10,7 @@ body {
   animation: gradientBG 15s ease infinite;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* full height */
+  min-height: 100vh;
 }
 
 @keyframes gradientBG {
@@ -75,10 +75,15 @@ header nav a:hover {
   padding: 20px 0;
   background-color: #f0f0f0;
   border-bottom: 1px solid #ddd;
+  overflow-x: auto; /* allow scrolling if needed */
+  flex-wrap: nowrap; /* force horizontal */
 }
 
 .action-btn {
   display: inline-block;
+  flex: 0 0 auto; /* prevent shrinking */
+  min-width: 120px;
+  text-align: center;
   padding: 15px 30px;
   background-color: #007bff;
   color: white;
@@ -95,66 +100,31 @@ header nav a:hover {
   transform: translateY(-2px);
 }
 
-/* --- Hero --- */
-.hero {
-  position: relative;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero .hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* full image */
-  object-position: center;
-  z-index: 1;
-  filter: brightness(0.6);
-}
-
-/* --- Buttons --- */
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #0077b6;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-top: 15px;
-  transition: background 0.3s;
-}
-
-.btn:hover { background: #005f8a; }
-
 /* --- Containers & Utilities --- */
 .container { width: 80%; margin: auto; padding: 30px 0; flex: 1; }
 .section-title { text-align: center; color: #023e8a; }
 .center-text { text-align: center; }
 .counter-box { text-align: center; margin-top: 20px; margin-bottom: 0; }
 
-/* --- Video Grid --- */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
+.highlight-number {
+  font-size: 3em;
+  font-weight: bold;
+  color: #28a745;
 }
 
-.video-container {
+/* --- Video Slider --- */
+.video-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.video-slider .video-container {
+  flex: 0 0 80%;
+  max-width: 500px;
+  scroll-snap-align: center;
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
@@ -164,7 +134,7 @@ header nav a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.video-container iframe {
+.video-slider .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -512,6 +482,4 @@ footer .social-links img:hover { transform: scale(1.2); }
   nav.show { display: flex; }
   .menu-toggle { display: block; }
   .container { width: 90%; }
-  .button-section { flex-direction: column; gap: 10px; }
-  .action-btn { width: 80%; margin: 0 auto; }
 }
