@@ -8,6 +8,9 @@ body {
   background: linear-gradient(-45deg, #0077b6, #00b4d8, #90e0ef, #caf0f8);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full height */
 }
 
 @keyframes gradientBG {
@@ -20,17 +23,13 @@ body {
 header {
   background: #0077b6;
   color: white;
-  padding: 15px;
+  padding: 9.5px;
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-header h1 {
-  margin: 0;
 }
 
 header nav a {
@@ -51,6 +50,49 @@ header nav a:hover {
   border: none;
   color: white;
   cursor: pointer;
+}
+
+/* --- Picture Banner --- */
+.banner {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* --- Button Section --- */
+.button-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+}
+
+.action-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 /* --- Hero --- */
@@ -76,12 +118,13 @@ header nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;    /* full image, no cropping */
+  object-fit: contain; /* full image */
   object-position: center;
   z-index: 1;
   filter: brightness(0.6);
-  background: linear-gradient(to bottom, #00A6FF, #5CE4FF); /* dark blue → white */
 }
+
+/* --- Buttons --- */
 .btn {
   display: inline-block;
   padding: 12px 25px;
@@ -95,13 +138,42 @@ header nav a:hover {
 
 .btn:hover { background: #005f8a; }
 
-/* --- Container --- */
-.container {
-  width: 80%;
-  margin: auto;
-  padding: 30px 0;
+/* --- Containers & Utilities --- */
+.container { width: 80%; margin: auto; padding: 30px 0; flex: 1; }
+.section-title { text-align: center; color: #023e8a; }
+.center-text { text-align: center; }
+.counter-box { text-align: center; margin-top: 20px; margin-bottom: 0; }
+
+/* --- Video Grid --- */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- Testimonials --- */
 .testimonial-slider {
   display: flex;
   flex-direction: column;
@@ -139,8 +211,7 @@ header nav a:hover {
   background: #45a049;
 }
 
-
-/* --- Medicine Grid --- */
+/* --- Medicine Grid (Services Page) --- */
 .medicine-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -239,6 +310,7 @@ header nav a:hover {
   background: #218838;
 }
 
+/* --- Success / Feedback (Contact Page) --- */
 .success-message {
   display: none;
   position: fixed;
@@ -262,7 +334,6 @@ header nav a:hover {
   100% { opacity: 0; }
 }
 
-/* --- Contact Form --- */
 .contact-container {
   background: #fff;
   padding: 30px;
@@ -316,9 +387,7 @@ button {
   transition: background 0.3s;
 }
 
-button:hover {
-  background: #005fcc;
-}
+button:hover { background: #005fcc; }
 
 .back-btn {
   margin-top: 10px;
@@ -333,9 +402,7 @@ button:hover {
   width: 100%;
 }
 
-.back-btn:hover {
-  background: #545b62;
-}
+.back-btn:hover { background: #545b62; }
 
 #spinner {
   display: none;
@@ -381,6 +448,13 @@ button:hover {
 }
 
 /* --- Team Page --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
 .team-card {
   background: #fff;
   border-radius: 12px;
@@ -402,45 +476,35 @@ button:hover {
   margin-bottom: 15px;
 }
 
-.team-card h3 {
-  margin: 10px 0 5px;
-  color: #0077b6;
-}
-
-.team-card .role {
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 10px;
-}
+.team-card h3 { margin: 10px 0 5px; color: #0077b6; }
+.team-card .role { font-weight: bold; color: #555; margin-bottom: 10px; }
 
 /* --- Footer --- */
 footer {
-  background: #023e8a;
-  color: white;
+  background: #343a40;
+  color: #ddd;
+  padding: 30px 20px;
   text-align: center;
-  padding: 15px 0;
-  margin-top: 30px;
 }
 
-footer .social-links {
-  margin-top: 10px;
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
 }
 
-footer .social-links a {
-  margin: 0 8px;
-  display: inline-block;
-}
+.footer-links a:hover { color: #fff; }
 
+footer .social-links { margin-top: 10px; }
+footer .social-links a { margin: 0 8px; display: inline-block; }
 footer .social-links img {
   width: 30px;
   height: 30px;
   filter: invert(1);
   transition: transform 0.3s;
 }
-
-footer .social-links img:hover {
-  transform: scale(1.2);
-}
+footer .social-links img:hover { transform: scale(1.2); }
 
 /* --- Responsive --- */
 @media(max-width:768px){
@@ -448,4 +512,6 @@ footer .social-links img:hover {
   nav.show { display: flex; }
   .menu-toggle { display: block; }
   .container { width: 90%; }
+  .button-section { flex-direction: column; gap: 10px; }
+  .action-btn { width: 80%; margin: 0 auto; }
 }

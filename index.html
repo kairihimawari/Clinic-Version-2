@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abortion Clinic - Philippines</title>
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -14,13 +14,25 @@
       <a href="services.html">Services</a>
       <a href="team.html">Our Team</a>
       <a href="contact.html">Contact</a>
-      <!-- <a href="confirm-orders.html">Orders</a> -->
     </nav>
     <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
   </header>
 
+  <!-- Banner Section -->
+  <section class="banner">
+    <img src="https://via.placeholder.com/800x200" alt="Clinic Banner" class="banner-img">
+  </section>
+
+  <!-- Button Section -->
+  <section class="button-section">
+    <a href="page1.html" class="action-btn">Button 1</a>
+    <a href="page2.html" class="action-btn">Button 2</a>
+    <a href="page3.html" class="action-btn">Button 3</a>
+  </section>
+
+  <!-- Hero Section -->
   <section class="hero">
-    <img src="https://i.imgur.com/u8DgVyY.jpeg" alt="Clinic" class="hero-img">
+    <img src="https://i.imgur.com/u8DgVyY.jpeg" alt="Clinic Building" class="hero-img">
     <div class="hero-content">
       <h2>Welcome to Our Clinic</h2>
       <p>Providing quality healthcare with compassion and care.</p>
@@ -28,147 +40,126 @@
     </div>
   </section>
 
- <main class="container">
-    <h2 style="text-align:center; color:#023e8a;">Why Choose Us?</h2>
-    <p style="text-align:center;"><b>Safe and Legal Services:</b> We adhere to the highest medical standards to ensure your safety and well-being.<br>
-
-<b>Confidential Care:</b>Your privacy is our utmost priority. We provide a safe space for you to discuss your options without judgment.<br>
-
-<b>Supportive Environment:</b> Our compassionate staff is here to support you every step of the way, offering counseling and guidance.<br>
-
-<b>Post-Abortion Care:</b> We offer comprehensive post-abortion care to ensure your recovery is smooth and healthy.<br><br>
-
-<b>Your Rights Matter!</b>
-<br>
-<br>
-We advocate for reproductive rights and work towards decriminalizing abortion in the Philippines. Every individual should have the right to make informed choices about their own body.</p>
+  <main class="container">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <p class="center-text">
+      <b>Safe and Legal Services:</b> We adhere to the highest medical standards to ensure your safety and well-being.<br>
+      <b>Confidential Care:</b> Your privacy is our utmost priority. We provide a safe space for you to discuss your options without judgment.<br>
+      <b>Supportive Environment:</b> Our compassionate staff is here to support you every step of the way, offering counseling and guidance.<br>
+      <b>Post-Abortion Care:</b> We offer comprehensive post-abortion care to ensure your recovery is smooth and healthy.<br><br>
+      <b>Your Rights Matter!</b><br><br>
+      We advocate for reproductive rights and work towards decriminalizing abortion in the Philippines. Every individual should have the right to make informed choices about their own body.
+    </p>
   </main>
 
-  <h2 style="text-align:center; color:#023e8a;">Proof of our Service</h2>
+  <h2 class="section-title">Proof of our Service</h2>
 
-<div class="video-grid">
-  <!-- Video 1 -->
-  <div class="video-container">
-    <iframe src="https://player.vimeo.com/video/1113474430?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-  </div>
-
-  <!-- Video 2 -->
-  <div class="video-container">
-    <iframe src="https://player.vimeo.com/video/1113474437?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-  </div>
-
-  <!-- Video 3 -->
-  <div class="video-container">
-    <iframe src="https://player.vimeo.com/video/1113474421?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
-  </div>
-</div>
-
-<style>
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1100px; /* keeps the row from being too wide */
-  margin: 0 auto;    /* centers the grid */
-  padding: 20px;
-}
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 100;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #000000; /* 👈 change background color here */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-</style>
-
-
- <!-- Testimonials Section -->
- <center>
-<section class="testimonials container">
-   <h2 style="text-align:center; color:#023e8a;">Testimonies</h2>
-  <div class="testimonial-slider">
-    <div class="testimonial-card" id="testimonialCard"></div>
-    <div class="slider-controls">
-      <button id="prevBtn">⟨</button>
-       <span id="counter"></span> <!-- page number goes here -->
-      <button id="nextBtn">⟩</button>
+  <div class="video-grid">
+    <div class="video-container">
+      <iframe src="https://player.vimeo.com/video/1113474430" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+      <iframe src="https://player.vimeo.com/video/1113474437" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+      <iframe src="https://player.vimeo.com/video/1113474421" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
     </div>
   </div>
-</section>
 
-<script src="testimonies.js"></script>
-<script>
-  let currentIndex = 0;
-  const card = document.getElementById("testimonialCard");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const counter = document.getElementById("counter");
+  <div class="counter-box">
+    <h3 class="section-title">Patients Successfully Helped Since 2005:</h3>
+    <p id="patientCounter">0</p>
+  </div>
 
-  function getRandomStars() {
-    const starsCount = Math.floor(Math.random() * 2) + 4; // 4 or 5 stars
-    return '★'.repeat(starsCount) + '☆'.repeat(5 - starsCount);
-  }
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const patientCounter = document.getElementById("patientCounter");
+      let count = 0;
+      const targetCount = 10641;
+      const duration = 3000;
+      const increment = targetCount / (duration / 10);
+      function animateCounter() {
+        if (count < targetCount) {
+          count += increment;
+          if (count > targetCount) count = targetCount;
+          patientCounter.textContent = Math.floor(count).toLocaleString();
+          requestAnimationFrame(animateCounter);
+        }
+      }
+      animateCounter();
+    });
+  </script>
 
-  function showTestimony(index) {
-    card.innerHTML = `
-      <p>${testimonies[index]}</p>
-      <div style="margin-top:8px; font-size:20px; color:#FFD700;">${getRandomStars()}</div>
-    `;
-  
-   counter.textContent = `${index + 1} / ${testimonies.length}`;
-}
+  <!-- Testimonials Section -->
+  <section class="testimonials container">
+    <h2 class="section-title">Testimonies</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial-card" id="testimonialCard"></div>
+      <div class="slider-controls">
+        <button id="prevBtn">⟨</button>
+        <span id="counter"></span>
+        <button id="nextBtn">⟩</button>
+      </div>
+    </div>
+  </section>
 
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + testimonies.length) % testimonies.length;
+  <script src="testimonies.js"></script>
+  <script>
+    let currentIndex = 0;
+    const card = document.getElementById("testimonialCard");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const counter = document.getElementById("counter");
+
+    function getRandomStars() {
+      const starsCount = Math.floor(Math.random() * 2) + 4;
+      return '★'.repeat(starsCount) + '☆'.repeat(5 - starsCount);
+    }
+
+    function showTestimony(index) {
+      card.innerHTML = `
+        <p>${testimonies[index]}</p>
+        <div style="margin-top:8px; font-size:20px; color:#FFD700;">${getRandomStars()}</div>
+      `;
+      counter.textContent = `${index + 1} / ${testimonies.length}`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + testimonies.length) % testimonies.length;
+      showTestimony(currentIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % testimonies.length;
+      showTestimony(currentIndex);
+    });
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % testimonies.length;
+      showTestimony(currentIndex);
+    }, 5000);
+
     showTestimony(currentIndex);
-  });
+  </script>
 
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % testimonies.length;
-    showTestimony(currentIndex);
-  });
-
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % testimonies.length;
-    showTestimony(currentIndex);
-  }, 5000);
-
-  showTestimony(currentIndex);
-</script>
-</center>
-
- 
-
-      <footer>
-      <p>© 2005 Our Clinic | All Rights Reserved</p>
-          <div class="footer-links">
+  <footer>
+    <p>© 2005 Our Clinic | All Rights Reserved</p>
+    <div class="footer-links">
       <a href="index.html">Home</a> | 
       <a href="services.html">Services</a> | 
       <a href="team.html">Team</a> | 
       <a href="contact.html">Contact</a>
     </div>
-      <div class="footer-contact">
+    <div class="footer-contact">
       📍 Parañaque City, Manila, Philippines <br>
       ☎ +63 991 435 2751<br>
       ✉ abortionclinicphilippines@gmail.com
     </div>
-      <div class="social-links">
-        <a href="https://wa.me/+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
-        <a href="viber://chat?number=%2B+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
-        <a href="https://t.me/+639121847959" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
-      </div>
-    </footer>
+    <div class="social-links">
+      <a href="https://wa.me/+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="viber://chat?number=%2B+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
+      <a href="https://t.me/+639121847959" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
+    </div>
+  </footer>
 </body>
 </html>
