@@ -71,28 +71,31 @@ header nav a:hover {
 .button-section {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 20px 0;
+  gap: 10px; /* smaller gap */
+  padding: 15px 0;
   background-color: #f0f0f0;
   border-bottom: 1px solid #ddd;
-  overflow-x: auto; /* allow scrolling if needed */
-  flex-wrap: nowrap; /* force horizontal */
+  flex-wrap: wrap; /* allow wrapping if very small screen */
 }
 
 .action-btn {
-  display: inline-block;
-  flex: 0 0 auto; /* prevent shrinking */
-  min-width: 120px;
+  flex: 1; /* distribute evenly */
+  max-width: 150px; /* limit width */
   text-align: center;
-  padding: 15px 30px;
+  padding: 8px 12px; /* smaller padding */
   background-color: #007bff;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
-  font-size: 18px;
+  border-radius: 6px;
+  font-size: 14px; /* smaller text */
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 .action-btn:hover {
