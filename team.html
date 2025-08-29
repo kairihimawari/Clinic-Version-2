@@ -5,72 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abortion Clinic - Philippines</title>
   <link rel="stylesheet" href="Style.css">
+  <style>
+    .contact-buttons {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .contact-buttons a {
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: white;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .whatsapp { background: #25D366; }
+    .whatsapp:hover { background: #1ebe5b; }
+    .viber { background: #7360F2; }
+    .viber:hover { background: #5a47d3; }
+    .telegram { background: #0088cc; }
+    .telegram:hover { background: #006f9e; }
+  </style>
 </head>
 <body>
   <header>
     <img src="https://i.imgur.com/T7BxxLm.jpeg" alt="Clinic Logo" style="height:60px; border-radius:100px;">
-     <nav>
+    <nav>
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="team.html">Team</a>
       <a href="contact.html">Contact</a>
-          </nav>
+    </nav>
     <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
   </header>
 
   <main class="container">
     <h2 style="text-align:center; color:#023e8a;">Meet Our Team</h2>
     <div class="gallery-grid">
-  <div class="team-card">
-    <div class="img-wrapper">
-      <img src="https://i.imgur.com/0w7pQNt.jpeg" alt="Dr. Cloe Grace Murphy">
-      <span class="verified"></span>
-    </div>
-    <h3>Dr. Cloe Grace Murphy</h3>
-    <p class="role">Chief Gynecologist</p>
-    <p>"I am a medical professional specializing in providing safe, compassionate, and confidential abortion care. My work focuses on supporting patients through informed decision-making, ensuring their physical and emotional well-being, and upholding the highest medical and ethical standards."</p>
-  </div>
 
-  <div class="team-card">
-    <div class="img-wrapper">
-      <img src="https://i.imgur.com/Ep9QecN.png" alt="Kairi Seiko Himawari">
-      <span class="verified"></span>
-    </div>
-    <h3>Kairi Seiko Himawari</h3>
-    <p class="role">Head Nurse</p>
-    <p>"I am a licensed medical professional specializing in providing safe, compassionate, and confidential abortion care. My work focuses on ensuring patients’ physical well-being, emotional support, and informed decision-making in a respectful and nonjudgmental environment."</p>
-  </div>
+      <!-- Team Member 1 -->
+      <div class="team-card">
+        <div class="img-wrapper">
+          <img src="https://i.imgur.com/0w7pQNt.jpeg" alt="Dr. Cloe Grace Murphy">
+          <span class="verified"></span>
+        </div>
+        <h3>Dr. Cloe Grace Murphy</h3>
+        <p class="role">Chief Gynecologist</p>
+        <p>"I am a medical professional specializing in providing safe, compassionate, and confidential abortion care. My work focuses on supporting patients through informed decision-making, ensuring their physical and emotional well-being, and upholding the highest medical and ethical standards."</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/+639914352751" target="_blank" class="whatsapp">WhatsApp</a>
+          <a href="viber://chat?number=%2B639914352751" target="_blank" class="viber">Viber</a>
+          <a href="https://t.me/+639121847959" target="_blank" class="telegram">Telegram</a>
+        </div>
+      </div>
 
-  <div class="team-card">
-    <div class="img-wrapper">
-      <img src="https://i.imgur.com/0BZ8uMd.jpeg" alt="Liana Mae Tan">
-      <span class="verified"></span>
+      <!-- Team Member 2 -->
+      <div class="team-card">
+        <div class="img-wrapper">
+          <img src="https://i.imgur.com/Ep9QecN.png" alt="Kairi Seiko Himawari">
+          <span class="verified"></span>
+        </div>
+        <h3>Kairi Seiko Himawari</h3>
+        <p class="role">Head Nurse</p>
+        <p>"I am a licensed medical professional specializing in providing safe, compassionate, and confidential abortion care. My work focuses on ensuring patients’ physical well-being, emotional support, and informed decision-making in a respectful and nonjudgmental environment."</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/+639914352751" target="_blank" class="whatsapp">WhatsApp</a>
+          <a href="viber://chat?number=%2B639914352751" target="_blank" class="viber">Viber</a>
+          <a href="https://t.me/+639121847959" target="_blank" class="telegram">Telegram</a>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="team-card">
+        <div class="img-wrapper">
+          <img src="https://i.imgur.com/0BZ8uMd.jpeg" alt="Liana Mae Tan">
+          <span class="verified"></span>
+        </div>
+        <h3>Liana Mae Tan</h3>
+        <p class="role">Pharmacist</p>
+        <p>I provide safe, confidential, and compassionate abortion care, ensuring patients receive accurate information, emotional support, and high-quality medical services in accordance with ethical and legal standards.</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/+639914352751" target="_blank" class="whatsapp">WhatsApp</a>
+          <a href="viber://chat?number=%2B639914352751" target="_blank" class="viber">Viber</a>
+          <a href="https://t.me/+639121847959" target="_blank" class="telegram">Telegram</a>
+        </div>
+      </div>
+
     </div>
-    <h3>Liana Mae Tan</h3>
-    <p class="role">Pharmacist</p>
-    <p>I provide safe, confidential, and compassionate abortion care, ensuring patients receive accurate information, emotional support, and high-quality medical services in accordance with ethical and legal standards.</p>
-  </div>
-</div>
   </main>
 
-     <footer>
-      <p>© 2005 Our Clinic | All Rights Reserved</p>
+  <footer>
+    <p>© 2005 Our Clinic | All Rights Reserved</p>
     <div class="footer-links">
       <a href="index.html">Home</a> | 
       <a href="services.html">Services</a> | 
       <a href="team.html">Team</a> | 
       <a href="contact.html">Contact</a>
     </div>
-      <div class="footer-contact">
+    <div class="footer-contact">
       📍 Parañaque City, Manila, Philippines <br>
       ☎ +63 991 435 2751<br>
       ✉ abortionclinicphilippines@gmail.com
     </div>
-      <div class="social-links">
-        <a href="https://wa.me/+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
-        <a href="viber://chat?number=%2B+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
-        <a href="https://t.me/+639121847959" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
-      </div>
-    </footer>
+    <div class="social-links">
+      <a href="https://wa.me/+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="viber://chat?number=%2B+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
+      <a href="https://t.me/+639121847959" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
+    </div>
+  </footer>
 </body>
 </html>
