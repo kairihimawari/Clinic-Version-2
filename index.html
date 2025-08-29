@@ -8,15 +8,18 @@
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/T7BxxLm.jpeg" alt="Clinic Logo" style="height:60px; border-radius:100px;">
-    <span class="logo-text">| Abortion Clinic Philippines</span>     <nav>
+    <a href="index.html" class="logo-link">
+        <img src="https://i.imgur.com/T7BxxLm.jpeg" alt="Clinic Logo" class="logo-img">
+        <span class="logo-text">Abortion Clinic Philippines</span>
+    </a>
+    <nav>
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="team.html">Team</a>
       <a href="contact.html">Contact</a>
     </nav>
     <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
-  </header>
+</header>
 
   <!-- Banner Section -->
   <section class="banner">
@@ -57,8 +60,8 @@
     </div>
   </div>
 
-  <div class="counter-box">
-    <h3 class="section-title">Patients Successfully Helped Since 2005:</h3>
+   <div class="counter-box">
+    <h2 class="section-title">Patients Successfully Helped Since 2005:</h2>
     <p id="patientCounter" class="highlight-number">0</p>
   </div>
 

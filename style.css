@@ -61,7 +61,22 @@ header nav a:hover {
   font-weight: 700;
   color: #FFFFFF; /* clinic white */
   font-family: system-ui, sans-serif;
+  text-align: center;
 }
+
+.logo-img {
+  height: 60px;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* keeps text color consistent */
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   header nav {
@@ -537,4 +552,111 @@ footer .social-links img:hover { transform: scale(1.2); }
 
 .verified::before {
   content: "✔";
+}
+
+/* --- Pregnancy Calculator Section --- */
+.calculator {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="date"] {
+  padding: 8px;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+button {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.baby-image {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.baby-image img {
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+.progress-container {
+  width: 100%;
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.progress-bar {
+  height: 20px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  transition: width 0.5s ease-in-out;
+}
+
+/* --- Share Buttons --- */
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.share-buttons a img {
+  width: 40px;
+  height: 40px;
+}
+
+/* --- Pill Section --- */
+.pill-section {
+  margin-top: 30px;
+  text-align: center;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.pill-section p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* --- Responsive: Calculator Buttons --- */
+@media (max-width: 600px) {
+  button {
+    width: 100%;
+  }
 }
