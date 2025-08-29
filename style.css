@@ -23,13 +23,18 @@ body {
 header {
   background: #0077b6;
   color: white;
-  padding: 9.5px;
+  padding: 2px;
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+header nav {
+  display: flex;
+  gap: 10px;
 }
 
 header nav a {
@@ -51,6 +56,31 @@ header nav a:hover {
   color: white;
   cursor: pointer;
 }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  header nav {
+    display: none; /* hide menu initially */
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #0077b6;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  header nav.show {
+    display: flex;
+    flex-direction: row; /* horizontal when shown */
+    gap: 15px;
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger on small screens */
+  }
+}
+
+
 
 /* --- Picture Banner --- */
 .banner {
@@ -223,7 +253,7 @@ header nav a:hover {
 }
 
 .gcash-btn {
-  background: #007bff;
+  background: #0077b6;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -391,10 +421,13 @@ button.error::after {
 }
 
 .team-card img {
-  width: 100%;
-  max-width: 200px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+  width: 150px;             /* Circle size */
+  height: 150px;
+  object-fit: cover;        /* Maintain aspect ratio while filling */
+  object-position: top;     /* Focus on the top part of the image */
+  border-radius: 50%;       /* Make it a circle */
+  display: block;
+  margin: 0 auto 10px;
 }
 
 .team-card h3 { margin: 10px 0 5px; color: #0077b6; }
@@ -433,4 +466,29 @@ footer .social-links img:hover { transform: scale(1.2); }
   nav.show { display: flex; }
   .menu-toggle { display: block; }
   .container { width: 90%; }
+}
+
+/* --- How to Use Pills Section --- */
+.how-to-use-pills {
+  background: #fff;                 /* White background for readability */
+  border: 2px solid #0077b6;        /* Clinic blue border */
+  border-radius: 12px;              /* Rounded corners */
+  padding: 25px;                    /* Spacing inside */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); /* Subtle shadow */
+  margin: 20px auto;                /* Space around */
+  max-width: 900px;                 /* Keep it centered */
+  line-height: 1.7;                 /* Comfortable reading */
+}
+
+.how-to-use-pills h1 {
+  text-align: center;
+  color: #023e8a;
+  margin-bottom: 20px;
+}
+
+.how-to-use-pills h2 {
+  color: #0077b6;
+  margin-top: 25px;
+  border-bottom: 2px solid #caf0f8; /* subtle underline */
+  padding-bottom: 5px;
 }

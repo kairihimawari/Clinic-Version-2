@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pregnancy Age & Calculator</title>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(-45deg, #0077b6, #00b4d8, #90e0ef, #caf0f8);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+    header {
+        background: #0077b6;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 10px;
+    }
+
+    header img {
+        height: 60px;
+        border-radius: 100px;
+    }
+
+    nav {
+        display: flex;
+        gap: 15px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .menu-toggle {
+        display: none;
+        background: none;
+        color: white;
+        font-size: 24px;
+        border: none;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 10px;
+    }
+
+    h2 {
+        color: #0077b6;
+        margin-bottom: 10px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .calculator {
+        margin-top: 30px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fafafa;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="date"] {
+        padding: 8px;
+        width: 100%;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    button {
+        background: #0077b6;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    .result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        background: #f3f3f3;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .baby-image {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .baby-image img {
+        max-width: 200px;
+        border-radius: 8px;
+    }
+
+    .progress-container {
+        width: 100%;
+        background: #eee;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-top: 15px;
+    }
+
+    .progress-bar {
+        height: 20px;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        transition: width 0.5s ease-in-out;
+    }
+
+    .share-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .share-buttons a img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .pill-section {
+        margin-top: 30px;
+        text-align: center;
+        padding: 20px;
+        background: #fafafa;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .pill-section p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    footer {
+  background: #343a40;
+  color: #ddd;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.footer-links a:hover { color: #fff; }
+
+footer .social-links { margin-top: 10px; }
+footer .social-links a { margin: 0 8px; display: inline-block; }
+footer .social-links img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.3s;
+}
+footer .social-links img:hover { transform: scale(1.2); }
+
+    @media (max-width: 600px) {
+        nav {
+            display: none;
+            flex-direction: column;
+            background: #0077b6;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            padding: 10px;
+        }
+        nav.show {
+            display: flex;
+        }
+        .menu-toggle {
+            display: block;
+        }
+        button {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="https://i.imgur.com/T7BxxLm.jpeg" alt="Clinic Logo">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Our Team</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+</header>
+
+<div class="container">
+    <section>
+        <h2>About Pregnancy Age</h2>
+        <p>
+            Pregnancy age, also known as gestational age, is the number of weeks that have passed since the first day of your last menstrual period (LMP). 
+            A typical pregnancy lasts about 40 weeks, starting from the LMP. 
+            Healthcare providers often use the LMP method to estimate the due date because it is easier to track than the actual date of conception.
+        </p>
+        <p>
+            Knowing your pregnancy age helps monitor the baby's development and schedule necessary prenatal care. 
+            Use the calculator below to estimate your pregnancy age and expected due date.
+        </p>
+    </section>
+
+    <div class="calculator">
+        <h2>Pregnancy Calculator (Based on LMP)</h2>
+        <label for="lmp">Select your Last Menstrual Period (LMP):</label>
+        <input type="date" id="lmp">
+        <button onclick="calculatePregnancy()">Calculate</button>
+
+        <div class="result" id="result"></div>
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar" style="width:0%">0%</div>
+        </div>
+        <div class="baby-image" id="babyImage"></div>
+
+        <div class="share-buttons" id="shareButtons" style="display:none;">
+            <a id="whatsappShare" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
+            <a id="viberShare" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
+            <a id="telegramShare" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
+        </div>
+    </div>
+
+    <div class="pill-section">
+        <p>
+            <strong>Get pills shipped to you.</strong> The pills are the same ones you get in a clinic. They are medically very safe. The pills are prescribed by a medical professional.
+        </p>
+        <a href="services.html"><button>Get Pills</button></a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2005 Our Clinic | All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a> | 
+      <a href="services.html">Services</a> | 
+      <a href="team.html">Team</a> | 
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      📍 Parañaque City, Manila, Philippines <br>
+      ☎ +63 991 435 2751<br>
+      ✉ abortionclinicphilippines@gmail.com
+    </div>
+    <div class="social-links">
+      <a href="https://wa.me/+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="viber://chat?number=%2B+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
+      <a href="https://t.me/+639121847959" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
+    </div>
+</footer>
+
+<script>
+function calculatePregnancy() {
+    const lmpInput = document.getElementById('lmp').value;
+    const resultDiv = document.getElementById('result');
+    const babyImageDiv = document.getElementById('babyImage');
+    const progressBar = document.getElementById('progressBar');
+    const shareButtons = document.getElementById('shareButtons');
+
+    if (!lmpInput) {
+        resultDiv.textContent = "Please select your LMP date.";
+        babyImageDiv.innerHTML = "";
+        progressBar.style.width = "0%";
+        progressBar.textContent = "0%";
+        progressBar.style.background = "#eee";
+        shareButtons.style.display = "none";
+        return;
+    }
+
+    const lmpDate = new Date(lmpInput);
+    const today = new Date();
+
+    if (lmpDate > today) {
+        resultDiv.textContent = "LMP date cannot be in the future.";
+        babyImageDiv.innerHTML = "";
+        shareButtons.style.display = "none";
+        return;
+    }
+
+    const diffTime = today - lmpDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    const weeks = Math.floor(diffDays / 7);
+    const days = diffDays % 7;
+    const dueDate = new Date(lmpDate);
+    dueDate.setDate(dueDate.getDate() + 280);
+
+    resultDiv.innerHTML = `
+        <p>Gestational Age: <strong>${weeks} weeks and ${days} days</strong></p>
+        <p>Estimated Due Date: <strong>${dueDate.toDateString()}</strong></p>
+    `;
+
+    // Progress bar calculation
+    let progress = (weeks / 40) * 100;
+    if (progress > 100) progress = 100;
+    progressBar.style.width = progress + "%";
+    progressBar.textContent = Math.round(progress) + "%";
+
+    // Trimester color
+    if (weeks <= 13) {
+        progressBar.style.background = "#4caf50";
+    } else if (weeks <= 27) {
+        progressBar.style.background = "#ff9800";
+    } else {
+        progressBar.style.background = "#f44336";
+    }
+
+    // Baby size image and text
+    let babyImgUrl = "";
+    let babyText = "";
+    if (weeks <= 4) {
+        babyImgUrl = "https://i.imgur.com/xvWyjXL.png";
+        babyText = "Your baby is about the size of a poppy seed.";
+    } else if (weeks <= 8) {
+        babyImgUrl = "https://i.imgur.com/HlH2zwc.png";
+        babyText = "Your baby is about the size of a raspberry.";
+    } else if (weeks <= 12) {
+        babyImgUrl = "https://i.imgur.com/kC8EzXn.png";
+        babyText = "Your baby is about the size of a lime.";
+    } else if (weeks <= 20) {
+        babyImgUrl = "https://i.imgur.com/h8f0MGe.png";
+        babyText = "Your baby is about the size of a mango.";
+    } else if (weeks <= 28) {
+        babyImgUrl = "https://i.imgur.com/FR9sq7v.png";
+        babyText = "Your baby is about the size of an eggplant.";
+    } else {
+        babyImgUrl = "https://i.imgur.com/ypklTmd.png";
+        babyText = "Your baby is about the size of a watermelon.";
+    }
+
+    babyImageDiv.innerHTML = `
+        <img src="${babyImgUrl}" alt="Baby Size">
+        <p>${babyText}</p>
+    `;
+
+    // Show share buttons
+    shareButtons.style.display = "flex";
+
+    const siteURL = "https://yourwebsite.com"; // Change to your real site
+    const message = `Gestational Age: ${weeks} weeks ${days} days. Due Date: ${dueDate.toDateString()}. ${babyText} Check here: ${siteURL}`;
+
+    document.getElementById('whatsappShare').href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    document.getElementById('viberShare').href = `viber://forward?text=${encodeURIComponent(message)}`;
+    document.getElementById('telegramShare').href = `https://t.me/share/url?url=${encodeURIComponent(siteURL)}&text=${encodeURIComponent(message)}`;
+}
+</script>
+
+</body>
+</html>
