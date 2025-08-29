@@ -56,7 +56,12 @@ header nav a:hover {
   color: white;
   cursor: pointer;
 }
-
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF; /* clinic white */
+  font-family: system-ui, sans-serif;
+}
 /* --- Responsive --- */
 @media (max-width: 768px) {
   header nav {
