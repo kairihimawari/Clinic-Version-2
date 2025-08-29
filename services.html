@@ -14,7 +14,6 @@
       <a href="services.html">Services</a>
       <a href="team.html">Our Team</a>
       <a href="contact.html">Contact</a>
-      <!-- <a href="confirm-orders.html">Orders</a> -->
     </nav>
     <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
   </header>
@@ -23,19 +22,21 @@
     <h2 style="text-align:center; color:#023e8a;">Available Medicines</h2>
     <div class="medicine-grid">
 
-      <!-- SET 1 -->
+      <!-- Set 1 -->
       <div class="medicine-grid-item">
-            <img src="https://i.imgur.com/1UyP6Ry.jpeg" alt="Medicine Set 1">
+        <img src="https://i.imgur.com/1UyP6Ry.jpeg" alt="Medicine Set 1">
         <strong>Set 1</strong>
         <span class="price">₱3,500</span>
         <small>6pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>6pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
         <button class="gcash-btn" onclick="toggleForm(this, 'Set 1', 3500)">Order Now</button>
         <form class="order-form" onsubmit="submitOrder(event)">
           <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
           <input type="text" name="contactNumber" placeholder="Contact Number" required>
           <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
           <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
+          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR">
           <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
           <button type="submit">Confirm Order</button>
         </form>
@@ -50,10 +51,12 @@
         <button class="gcash-btn" onclick="toggleForm(this, 'Set 2', 4500)">Order Now</button>
         <form class="order-form" onsubmit="submitOrder(event)">
           <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
           <input type="text" name="contactNumber" placeholder="Contact Number" required>
           <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
           <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
+          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR">
           <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
           <button type="submit">Confirm Order</button>
         </form>
@@ -68,10 +71,12 @@
         <button class="gcash-btn" onclick="toggleForm(this, 'Set 3', 5800)">Order Now</button>
         <form class="order-form" onsubmit="submitOrder(event)">
           <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
           <input type="text" name="contactNumber" placeholder="Contact Number" required>
           <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
           <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
+          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR">
           <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
           <button type="submit">Confirm Order</button>
         </form>
@@ -86,10 +91,12 @@
         <button class="gcash-btn" onclick="toggleForm(this, 'Set 4', 6800)">Order Now</button>
         <form class="order-form" onsubmit="submitOrder(event)">
           <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
           <input type="text" name="contactNumber" placeholder="Contact Number" required>
           <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
           <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR">
+          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
+          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR">
           <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
           <button type="submit">Confirm Order</button>
         </form>
@@ -101,13 +108,15 @@
         <strong>Set 5</strong>
         <span class="price">₱7,800</span>
         <small>14pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>14pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
-         <button class="gcash-btn" onclick="toggleForm(this, 'Set 5', 7800)">Order Now</button>
+        <button class="gcash-btn" onclick="toggleForm(this, 'Set 5', 7800)">Order Now</button>
         <form class="order-form" onsubmit="submitOrder(event)">
           <input type="text" name="fullName" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
           <input type="text" name="contactNumber" placeholder="Contact Number" required>
           <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
           <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <img src="https://via.placeholder.com/200x200?text=GCash+QR" alt="GCash QR Code">
+          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
+          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR Code">
           <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
           <button type="submit">Confirm Order</button>
         </form>
@@ -116,76 +125,121 @@
     </div>
   </main>
 
-    <div id="successMessage" class="success-message"></div>
+  <!-- Toast Message -->
+  <div id="successMessage" class="feedback-popup success"></div>
 
+  <!-- Scripts -->
   <script>
     function toggleForm(button, medicineName, price) {
-      document.querySelectorAll('.order-form').forEach(form => form.style.display = 'none');
       const form = button.nextElementSibling;
-      form.style.display = 'block';
-      form.dataset.medicine = medicineName;
-      form.dataset.price = price;
+      form.style.display = form.style.display === "block" ? "none" : "block";
+
+      if (form.style.display === "block") {
+        form.dataset.medicine = medicineName;
+        form.dataset.price = price;
+
+        const shippingFee = 500;
+        const tax = (price + shippingFee) * 0.12;
+        const total = price + shippingFee + tax;
+
+        form.querySelector(".total-price").textContent =
+          `Base: ₱${price} + Shipping ₱${shippingFee} + Tax ₱${tax.toFixed(2)} 
+           = Total ₱${total.toFixed(2)}`;
+      }
     }
 
     function submitOrder(event) {
       event.preventDefault();
       const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add("loading");
+
       const medicineName = form.dataset.medicine;
-      const price = form.dataset.price;
-      const fullName = form.fullName.value;
-      const contactNumber = form.contactNumber.value;
-      const address = form.address.value;
-      const referenceNumber = form.referenceNumber.value;
+      const basePrice = parseFloat(form.dataset.price);
 
-      let orders = JSON.parse(localStorage.getItem('orders')) || [];
-      orders.push({
-        medicine: medicineName,
-        price: price,
-        fullName: fullName,
-        contact: contactNumber,
-        address: address,
-        reference: referenceNumber,
-        status: 'Pending'
-      });
-      localStorage.setItem('orders', JSON.stringify(orders));
+      const shippingFee = 500;
+      const tax = (basePrice + shippingFee) * 0.12;
+      const totalPrice = basePrice + shippingFee + tax;
 
-      form.style.display = 'none';
-      const successMessage = document.getElementById('successMessage');
-      successMessage.textContent = `✅ Order Placed for ${medicineName} - ₱${price}`;
-      successMessage.style.display = 'block';
-      setTimeout(() => successMessage.style.display = 'none', 4000);
-      form.reset();
+      const orderData = {
+        fullName: form.elements["fullName"].value,
+        email: form.elements["email"].value,
+        contactNumber: form.elements["contactNumber"].value,
+        address: form.elements["address"].value,
+        referenceNumber: form.elements["referenceNumber"].value,
+        medicineName: form.dataset.medicine,
+        price: basePrice,
+        shipping: shippingFee,
+        tax: tax.toFixed(2),
+        total: totalPrice.toFixed(2)
+      };
+
+      emailjs.send("service_jmbaoq6", "template_ddebyrp", orderData)
+        .then(function() {
+          submitBtn.classList.remove("loading");
+          submitBtn.classList.add("success");
+
+          showToast(
+            `✅ Order Placed for ${medicineName}. 
+Base: ₱${basePrice} + Shipping ₱${shippingFee} + Tax ₱${tax.toFixed(2)} 
+= Total ₱${totalPrice.toFixed(2)}. 
+You will be contacted soon.`,
+            "success"
+          );
+
+          setTimeout(() => {
+            form.style.display = "none";
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("success");
+          }, 1500);
+        })
+        .catch(function(error) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("loading");
+          showToast("❌ Failed to send order. Please try again later.", "error");
+          console.error("EmailJS Error:", error);
+        });
+    }
+
+    function showToast(message, type) {
+      const successMessage = document.getElementById("successMessage");
+      successMessage.className = `feedback-popup ${type}`;
+      successMessage.textContent = message;
+      successMessage.style.display = "block";
+
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 3000);
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-  document.addEventListener("keydown", function(e) {
-    // CTRL + O shortcut
-    if (e.ctrlKey && e.key.toLowerCase() === "o") {
-      e.preventDefault();
-      window.open("confirm-orders.html", "_blank");
-    }
-  });
-</script>
-<footer>
+    (function() {
+      emailjs.init("dpe65LoD_aUjUS0CV");
+    })();
+  </script>
 
-      <p>© 2005 Our Clinic | All Rights Reserved</p>
+  <footer>
+    <p>© 2005 Our Clinic | All Rights Reserved</p>
     <div class="footer-links">
       <a href="index.html">Home</a> | 
       <a href="services.html">Services</a> | 
       <a href="team.html">Team</a> | 
       <a href="contact.html">Contact</a>
-
     </div>
-      <div class="footer-contact">
+    <div class="footer-contact">
       📍 Parañaque City, Manila, Philippines <br>
       ☎ +63 991 435 2751<br>
       ✉ abortionclinicphilippines@gmail.com
     </div>
-      <div class="social-links">
-        <a href="https://wa.me/+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
-        <a href="viber://chat?number=%2B+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
-        <a href="https://t.me/+639121847959" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
-      </div>
-    </footer>
+    <div class="social-links">
+      <a href="https://wa.me/+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="viber://chat?number=%2B+639914352751" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg" alt="Viber"></a>
+      <a href="https://t.me/+639121847959" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
+    </div>
+  </footer>
 </body>
 </html>

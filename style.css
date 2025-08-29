@@ -71,22 +71,22 @@ header nav a:hover {
 .button-section {
   display: flex;
   justify-content: center;
-  gap: 10px; /* smaller gap */
+  gap: 10px;
   padding: 15px 0;
   border-bottom: 0px solid #ddd;
-  flex-wrap: wrap; /* allow wrapping if very small screen */
+  flex-wrap: wrap;
 }
 
 .action-btn {
-  flex: 1; /* distribute evenly */
-  max-width: 150px; /* limit width */
+  flex: 1;
+  max-width: 150px;
   text-align: center;
-  padding: 8px 12px; /* smaller padding */
+  padding: 8px 12px;
   background-color: #007bff;
   color: white;
   text-decoration: none;
   border-radius: 6px;
-  font-size: 14px; /* smaller text */
+  font-size: 14px;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -97,13 +97,8 @@ header nav a:hover {
   transform: translateY(-2px);
 }
 
-.action-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
 /* --- Containers & Utilities --- */
-.container { width: 80%; margin: auto; padding: 30px 0; flex: 1; }
+.container { width: 40%; margin: auto; padding: 30px 0; flex: 1; }
 .section-title { text-align: center; color: #023e8a; }
 .center-text { text-align: center; }
 .counter-box { text-align: center; margin-top: 20px; margin-bottom: 0; }
@@ -151,7 +146,7 @@ header nav a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .testimonial-card {
@@ -265,6 +260,9 @@ header nav a:hover {
   display: block;
   margin: 10px auto;
   border-radius: 8px;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
 }
 
 .order-form button[type="submit"] {
@@ -282,115 +280,55 @@ header nav a:hover {
   background: #218838;
 }
 
-/* --- Success / Feedback (Contact Page) --- */
-.success-message {
+/* --- Success/Error Popup Feedback --- */
+.feedback-popup {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 20px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: #28a745;
-  color: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  font-size: 18px;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: bold;
   z-index: 2000;
-  animation: fadeInOut 3s ease forwards;
+  opacity: 0;
+  animation: fadeSlide 0.4s ease forwards;
 }
 
-@keyframes fadeInOut {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-.contact-container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-}
-
-.contact-container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-weight: bold;
-  margin: 10px 0 5px;
-  color: #444;
-}
-
-input, textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px;
-  background: #0077ff;
+.feedback-popup.success {
+  background: #28a745;
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
 }
 
-button:hover { background: #005fcc; }
-
-.back-btn {
-  margin-top: 10px;
-  padding: 12px;
-  background: #6c757d;
+.feedback-popup.error {
+  background: #dc3545;
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-  width: 100%;
 }
 
-.back-btn:hover { background: #545b62; }
-
-#spinner {
-  display: none;
-  text-align: center;
-  margin-top: 15px;
-  color: #555;
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
 }
 
-.loader {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #0077ff;
+/* --- Button Loading/Success/Error States --- */
+button.loading {
+  position: relative;
+  color: transparent !important;
+}
+
+button.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 1s linear infinite;
-  margin: 10px auto;
+  animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
@@ -398,25 +336,36 @@ button:hover { background: #005fcc; }
   100% { transform: rotate(360deg); }
 }
 
-.feedback {
-  display: none;
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 15px;
-  text-align: center;
+button.success {
+  position: relative;
+  color: transparent !important;
 }
 
-.feedback.success {
-  background: #e6ffed;
-  color: #1b7a3d;
-  border: 1px solid #1b7a3d;
+button.success::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #28a745;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.feedback.error {
-  background: #ffe6e6;
-  color: #a80000;
-  border: 1px solid #a80000;
+button.error {
+  position: relative;
+  color: transparent !important;
+}
+
+button.error::after {
+  content: "✖";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #dc3545;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* --- Team Page --- */
