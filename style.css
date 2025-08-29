@@ -492,3 +492,36 @@ footer .social-links img:hover { transform: scale(1.2); }
   border-bottom: 2px solid #caf0f8; /* subtle underline */
   padding-bottom: 5px;
 }
+
+.img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.img-wrapper img {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}
+
+.verified {
+  position: absolute;
+  bottom: -6px;   /* pushes it outside the picture */
+  right: -6px;    /* overlaps outside right */
+  width: 22px;
+  height: 22px;
+  background: #1DA1F2; /* Facebook blue */
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.verified::before {
+  content: "✔";
+}
