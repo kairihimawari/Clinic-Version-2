@@ -144,10 +144,13 @@ header nav a:hover {
 .action-btn {
   flex: 1;
   max-width: 150px;
-  height: 50px; /* set a consistent height */
+  height: 50px;
   display: flex; 
-  align-items: center;   /* vertical center */
-  justify-content: center; /* horizontal center */
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+  white-space: normal;   /* allow wrapping */
+  text-align: center;    /* center wrapped text */
   
   padding: 8px 12px;
   background-color: #007bff;
