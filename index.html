@@ -64,7 +64,23 @@
     <h2 class="section-title">Patients Successfully Helped Since 2005:</h2>
     <p id="patientCounter" class="highlight-number">0</p>
   </div>
+<script>
+  let videoIndex = 0;
+  const videos = document.querySelectorAll(".video-container");
 
+  function showVideo(index) {
+    videos.forEach((video, i) => {
+      video.style.transform = `translateX(${100 * (i - index)}%)`;
+    });
+  }
+
+  setInterval(() => {
+    videoIndex = (videoIndex + 1) % videos.length;
+    showVideo(videoIndex);
+  }, 7000); // 7s per video
+
+  showVideo(videoIndex);
+</script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const patientCounter = document.getElementById("patientCounter");
@@ -113,7 +129,7 @@
     function showTestimony(index) {
       card.innerHTML = `
         <p>${testimonies[index]}</p>
-        <div style="margin-top:8px; font-size:20px; color:#FFD700;">${getRandomStars()}</div>
+        <div style="margin-top:8px; font-size:30px; color:#FFD700;">${getRandomStars()}</div>
       `;
       counter.textContent = `${index + 1} / ${testimonies.length}`;
     }

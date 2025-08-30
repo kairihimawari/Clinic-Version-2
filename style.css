@@ -69,30 +69,52 @@ header nav a:hover {
   color: inherit;        /* keeps text color consistent */
 }
 
-/* --- Responsive --- */
+/* Hamburger menu smaller clickable area but same font size */
+.menu-toggle {
+  display: none; /* default hidden on desktop */
+  font-size: 26px; /* keep icon size */
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+  width: 36px;       /* smaller width */
+  height: 36px;      /* smaller height */
+  padding: 0;        /* remove default padding */
+  line-height: 36px; /* vertically center icon */
+  text-align: center;
+}
+/* Responsive header nav on mobile */
 @media (max-width: 768px) {
   header nav {
-    display: none; /* hide menu initially */
+    display: none;
     position: absolute;
     top: 60px;
     right: 10px;
     background: #0077b6;
     padding: 10px;
     border-radius: 8px;
+    width: auto; /* allow width to fit content */
+    text-align: center;
+    flex-direction: row; /* horizontal links */
+    gap: 15px; /* spacing between links */
   }
+  header nav.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
 
   header nav.show {
     display: flex;
-    flex-direction: row; /* horizontal when shown */
-    gap: 15px;
   }
 
   .menu-toggle {
     display: block; /* show hamburger on small screens */
   }
 }
-
-
 
 /* --- Picture Banner --- */
 .banner {
@@ -122,7 +144,11 @@ header nav a:hover {
 .action-btn {
   flex: 1;
   max-width: 150px;
-  text-align: center;
+  height: 50px; /* set a consistent height */
+  display: flex; 
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center */
+  
   padding: 8px 12px;
   background-color: #007bff;
   color: white;
@@ -140,10 +166,27 @@ header nav a:hover {
 }
 
 /* --- Containers & Utilities --- */
-.container { width: 40%; margin: auto; padding: 30px 0; flex: 1; }
-.section-title { text-align: center; color: #023e8a; }
-.center-text { text-align: center; }
-.counter-box { text-align: center; margin-top: 20px; margin-bottom: 0; }
+.container {
+  width: 40%;
+  margin: auto;
+  padding: 30px 0;
+  flex: 1;
+}
+
+.section-title {
+  text-align: center;
+  color: #023e8a;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.counter-box {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
 
 .highlight-number {
   font-size: 3em;
@@ -200,29 +243,36 @@ header nav a:hover {
   font-style: italic;
 }
 
+/* Slider controls horizontal */
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* vertically center all children */
+  gap: 10px;
+  margin-top: 15px;
+}
 .slider-controls span {
-  display: inline-block;
-  min-width: 60px;   /* keeps spacing consistent */
-  text-align: center;
+  min-width: auto; /* remove fixed min-width */
   font-weight: bold;
 }
-
 .slider-controls button {
   background: #4CAF50;
   color: white;
   border: none;
   padding: 10px 15px;
-  margin: 0 5px;
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
-
 .slider-controls button:hover {
   background: #45a049;
 }
 
+#counter {
+  white-space: nowrap;
+  font-size: 16px;
+}
 /* --- Medicine Grid (Services Page) --- */
 .medicine-grid {
   display: grid;
@@ -445,8 +495,16 @@ button.error::after {
   margin: 0 auto 10px;
 }
 
-.team-card h3 { margin: 10px 0 5px; color: #0077b6; }
-.team-card .role { font-weight: bold; color: #555; margin-bottom: 10px; }
+.team-card h3 {
+  margin: 10px 0 5px;
+  color: #0077b6;
+}
+
+.team-card .role {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
 
 /* --- Footer --- */
 footer {
@@ -463,32 +521,53 @@ footer {
   font-size: 14px;
 }
 
-.footer-links a:hover { color: #fff; }
+.footer-links a:hover {
+  color: #fff;
+}
 
-footer .social-links { margin-top: 10px; }
-footer .social-links a { margin: 0 8px; display: inline-block; }
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  margin: 0 8px;
+  display: inline-block;
+}
+
 footer .social-links img {
   width: 30px;
   height: 30px;
   filter: invert(1);
   transition: transform 0.3s;
 }
-footer .social-links img:hover { transform: scale(1.2); }
 
-/* --- Responsive --- */
-@media(max-width:768px){
-  nav { display: none; flex-direction: column; }
-  nav.show { display: flex; }
-    .menu-toggle {
-  display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin-left: auto; /* push it to the right */
+footer .social-links img:hover {
+  transform: scale(1.2);
+}
 
-  .container { width: 90%; }
+/* --- Responsive General --- */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Make container wider on small screens */
+    padding: 20px 0;
+  }
+
+  .action-btn {
+    max-width: 100%; /* Make action buttons full width */
+  }
+
+  .video-slider .video-container {
+    flex: 0 0 90%; /* Adjust video container width for mobile */
+    max-width: 100%;
+  }
+
+  .testimonial-card {
+    max-width: 90%; /* Adjust testimonial card width for mobile */
+  }
+
+  .medicine-grid {
+    grid-template-columns: 1fr; /* Stack medicine items vertically */
+  }
 }
 
 /* --- How to Use Pills Section --- */
