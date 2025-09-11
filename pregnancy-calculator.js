@@ -117,6 +117,7 @@
             document.getElementById("whatsappShare").href = `https://wa.me/?text=${shareText}`;
             document.getElementById("viberShare").href = `viber://forward?text=${shareText}`;
             document.getElementById("telegramShare").href = `https://t.me/share/url?url=&text=${shareText}`;
+             document.getElementById("facebookShare").href = `https://www.facebook.com/messages/t/805700862615682/share/url?url=&text=${shareText}`;
 
             shareButtons.style.display = "flex";
         }, 1000);
@@ -124,7 +125,7 @@
 
     shareButtons.innerHTML = `
     <p style="margin-bottom:5px;font-weight:bold;text-align:center;">
-        Share the result with us via WhatsApp, Viber and Telegram:
+        Share the result with us via WhatsApp, Facebook , Viber and Telegram:
     </p>
     ${shareButtons.innerHTML}
 `;
