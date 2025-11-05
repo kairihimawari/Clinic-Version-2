@@ -21,211 +21,252 @@
     <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
 </header>
 
-  <main class="container">
-    <h2 style="text-align:center; color:#023e8a;">Available Medicines</h2>
-    <div class="medicine-grid">
+<main class="container">
+  <h2 style="text-align:center; color:#023e8a;">Order Medicines & Appointments</h2>
 
-      <!-- Set 1 -->
-      <div class="medicine-grid-item">
-        <img src="https://i.imgur.com/1UyP6Ry.jpeg" alt="Medicine Set 1">
-        <strong>Set 1</strong>
-        <span class="price">₱3,500</span>
-        <small>0-2 Months<br><br>6pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>6pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
-        <button class="gcash-btn" onclick="toggleForm(this, 'Set 1', 3500)">Order Now</button>
-        <form class="order-form" onsubmit="submitOrder(event)">
-          <input type="text" name="fullName" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="text" name="contactNumber" placeholder="Contact Number" required>
-          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
-          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
-          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR">
-          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
-          <button type="submit">Confirm Order</button>
-        </form>
-      </div>
+  <!-- Medicine Order Form -->
+  <div class="order-section">
+    <form id="orderForm" onsubmit="submitOrder(event)">
+      <h3 style="color:#023e8a;">Order Medicines</h3>
 
-      <!-- Set 2 -->
-      <div class="medicine-grid-item">
-        <img src="https://i.imgur.com/FI8eURD.jpeg" alt="Medicine Set 2">
-        <strong>Set 2</strong>
-        <span class="price">₱4,500</span>
-        <small>2-4 Months<br><br>8pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>8pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
-        <button class="gcash-btn" onclick="toggleForm(this, 'Set 2', 4500)">Order Now</button>
-        <form class="order-form" onsubmit="submitOrder(event)">
-          <input type="text" name="fullName" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="text" name="contactNumber" placeholder="Contact Number" required>
-          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
-          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
-          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR">
-          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
-          <button type="submit">Confirm Order</button>
-        </form>
-      </div>
+      <label for="medicineSet" style="font-weight:bold; color:#023e8a;">Select Medicine Set:</label>
+      <select id="medicineSet" name="medicineSet" required onchange="updatePrice()">
+        <option value="" disabled selected>Select a set</option>
+        <option value="Set 1" data-price="3500">Set 1 - ₱3,500 (0-2 Months)</option>
+        <option value="Set 2" data-price="4500">Set 2 - ₱4,500 (2-4 Months)</option>
+        <option value="Set 3" data-price="5800">Set 3 - ₱5,800 (4-5 Months)</option>
+        <option value="Set 4" data-price="6800">Set 4 - ₱6,800 (5-6 Months)</option>
+        <option value="Set 5" data-price="7800">Set 5 - ₱7,800 (6-8 Months)</option>
+      </select>
 
-      <!-- Set 3 -->
-      <div class="medicine-grid-item">
-        <img src="https://i.imgur.com/YQVXxK8.jpeg" alt="Medicine Set 3">
-        <strong>Set 3</strong>
-        <span class="price">₱5,800</span>
-        <small>4-5 Months<br><br>10pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>10pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
-        <button class="gcash-btn" onclick="toggleForm(this, 'Set 3', 5800)">Order Now</button>
-        <form class="order-form" onsubmit="submitOrder(event)">
-          <input type="text" name="fullName" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="text" name="contactNumber" placeholder="Contact Number" required>
-          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
-          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
-          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR">
-          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
-          <button type="submit">Confirm Order</button>
-        </form>
-      </div>
+      <label for="shippingMethod" style="font-weight:bold; color:#023e8a; margin-top:1em;">Select Shipping/Payment Method:</label>
+      <select id="shippingMethod" name="shippingMethod" required onchange="updatePrice()">
+        <option value="" disabled selected>Select a method</option>
+        <option value="free" data-fee="0">Free Shipping</option>
+        <option value="cod" data-fee="500">Cash on Delivery (₱500 Shipping Fee)</option>
+        <option value="installment" data-fee="500">Installment (₱500 Shipping Fee)</option>
+      </select>
 
-      <!-- Set 4 -->
-      <div class="medicine-grid-item">
-        <img src="https://i.imgur.com/LtJTb4E.jpeg/" alt="Medicine Set 4">
-        <strong>Set 4</strong>
-        <span class="price">₱6,800</span>
-        <small>5-6 Months<br><br>12pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>12pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
-        <button class="gcash-btn" onclick="toggleForm(this, 'Set 4', 6800)">Order Now</button>
-        <form class="order-form" onsubmit="submitOrder(event)">
-          <input type="text" name="fullName" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="text" name="contactNumber" placeholder="Contact Number" required>
-          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
-          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
-          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR">
-          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
-          <button type="submit">Confirm Order</button>
-        </form>
-      </div>
+      <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center; margin-top:1em;">
+        Total Price: ₱0.00
+      </p>
 
-      <!-- Set 5 -->
-      <div class="medicine-grid-item">
-        <img src="https://i.imgur.com/0ZLFwci.jpeg" alt="Medicine Set 5">
-        <strong>Set 5</strong>
-        <span class="price">₱7,800</span>
-        <small>6-8 Months<br><br>14pᴄs Cytotec (Mɪsᴏᴘʀᴏsᴛᴏʟ)<br>14pᴄs Mifepristone<br>4pᴄs Medione/Methergine<br></small>
-        <button class="gcash-btn" onclick="toggleForm(this, 'Set 5', 7800)">Order Now</button>
-        <form class="order-form" onsubmit="submitOrder(event)">
-          <input type="text" name="fullName" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="text" name="contactNumber" placeholder="Contact Number" required>
-          <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
-          <input type="text" name="referenceNumber" placeholder="GCash Reference Number" required>
-          <p class="total-price" style="font-weight:bold; color:#023e8a; text-align:center;"></p>
-          <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR Code">
-          <p style="font-size:14px;text-align:center;">Scan to pay via GCash</p>
-          <button type="submit">Confirm Order</button>
-        </form>
-      </div>
+      <h4 style="color:#023e8a;">Your Details</h4>
+      <input type="text" name="fullName" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="contactNumber" placeholder="Contact Number" required>
+      <textarea name="address" placeholder="Delivery Address (if applicable)" rows="3"></textarea>
 
-    </div>
-  </main>
+      <label for="referenceNumber" style="margin-top:1em;">GCash Reference Number (if applicable):</label>
+      <input type="text" name="referenceNumber" placeholder="GCash Reference Number">
 
-  <!-- Toast Message -->
-  <div id="successMessage" class="feedback-popup success"></div>
+      <button type="submit" style="margin-top:1em; background:#0077b6; color:#fff;">Confirm Medicine Order</button>
+    </form>
+  </div>
 
-  <!-- Scripts -->
-  <script>
-    function toggleForm(button, medicineName, price) {
-      const form = button.nextElementSibling;
-      form.style.display = form.style.display === "block" ? "none" : "block";
+  <hr style="margin: 2em 0;">
 
-      if (form.style.display === "block") {
-        form.dataset.medicine = medicineName;
-        form.dataset.price = price;
+  <!-- Appointment Booking Form -->
+  <div class="appointment-section">
+    <form id="appointmentForm" onsubmit="submitAppointment(event)">
+      <h3 style="color:#023e8a;">Appointment for Clinical Procedure</h3>
 
-        const shippingFee = 500;
-        const tax = (price + shippingFee) * 0.12;
-        const total = price + shippingFee + tax;
+      <input type="text" name="fullName" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="contactNumber" placeholder="Contact Number" required>
 
-        form.querySelector(".total-price").textContent =
-          `Base: ₱${price} + Shipping ₱${shippingFee} + Tax ₱${tax.toFixed(2)} 
-           = Total ₱${total.toFixed(2)}`;
-      }
+      <label for="appointmentDate">Preferred Date:</label>
+      <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+      <label for="appointmentTime">Preferred Time:</label>
+      <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+      <button type="submit" style="margin-top:1em; background:#0096c7; color:#fff;">Book Appointment</button>
+    </form>
+  </div>
+</main>
+
+<script>
+  // Calculate price (updated to handle partial selections)
+  function updatePrice() {
+    const medicineSelect = document.getElementById('medicineSet');
+    const shippingSelect = document.getElementById('shippingMethod');
+    const totalPriceElem = document.querySelector('.total-price');
+
+    if (!medicineSelect.value) {
+      totalPriceElem.textContent = 'Total Price: ₱0.00';
+      return;
     }
 
-    function submitOrder(event) {
-      event.preventDefault();
-      const form = event.target;
-      const submitBtn = form.querySelector('button[type="submit"]');
+    let basePrice = parseFloat(medicineSelect.selectedOptions[0].dataset.price);
+    let shippingFee = 0;
+    let tax = basePrice * 0.12; // Start with tax on base only
+    let total = basePrice + shippingFee + tax;
 
-      submitBtn.disabled = true;
-      submitBtn.classList.add("loading");
-
-      const medicineName = form.dataset.medicine;
-      const basePrice = parseFloat(form.dataset.price);
-
-      const shippingFee = 500;
-      const tax = (basePrice + shippingFee) * 0.12;
-      const totalPrice = basePrice + shippingFee + tax;
-
-      const orderData = {
-        fullName: form.elements["fullName"].value,
-        email: form.elements["email"].value,
-        contactNumber: form.elements["contactNumber"].value,
-        address: form.elements["address"].value,
-        referenceNumber: form.elements["referenceNumber"].value,
-        medicineName: form.dataset.medicine,
-        price: basePrice,
-        shipping: shippingFee,
-        tax: tax.toFixed(2),
-        total: totalPrice.toFixed(2)
-      };
-
-      emailjs.send("service_jmbaoq6", "template_ddebyrp", orderData)
-        .then(function() {
-          submitBtn.classList.remove("loading");
-          submitBtn.classList.add("success");
-
-          showToast(
-            `✅ Order Placed for ${medicineName}. 
-Base: ₱${basePrice} + Shipping ₱${shippingFee} + Tax ₱${tax.toFixed(2)} 
-= Total ₱${totalPrice.toFixed(2)}. 
-You will be contacted soon.`,
-            "success"
-          );
-
-          setTimeout(() => {
-            form.style.display = "none";
-            form.reset();
-            submitBtn.disabled = false;
-            submitBtn.classList.remove("success");
-          }, 1500);
-        })
-        .catch(function(error) {
-          submitBtn.disabled = false;
-          submitBtn.classList.remove("loading");
-          showToast("❌ Failed to send order. Please try again later.", "error");
-          console.error("EmailJS Error:", error);
-        });
+    // If shipping is selected, add it and recalculate tax
+    if (shippingSelect.value) {
+      shippingFee = parseFloat(shippingSelect.selectedOptions[0].dataset.fee);
+      tax = (basePrice + shippingFee) * 0.12;
+      total = basePrice + shippingFee + tax;
     }
 
-    function showToast(message, type) {
-      const successMessage = document.getElementById("successMessage");
-      successMessage.className = `feedback-popup ${type}`;
-      successMessage.textContent = message;
-      successMessage.style.display = "block";
-
-      setTimeout(() => {
-        successMessage.style.display = "none";
-      }, 3000);
+    if (shippingSelect.value === 'installment') {
+      const downpayment = (basePrice / 2) + shippingFee;
+      const interest = downpayment * 0.20; 
+      const installmentAmount = downpayment + interest;
+      // Include full total (with tax) for clarity
+      totalPriceElem.innerHTML = `
+        <strong>Installment Plan (Total with Tax: ₱${total.toFixed(2)}):</strong><br>
+        Downpayment (50% + shipping): ₱${downpayment.toFixed(2)}<br>
+        Interest (20%): ₱${interest.toFixed(2)}<br>
+        Total per installment (every 15 days): ₱${installmentAmount.toFixed(2)}
+      `;
+    } else {
+      // Standard display: base + shipping (if any) + tax
+      const shippingText = shippingSelect.value ? ` + Shipping ₱${shippingFee}` : '';
+      totalPriceElem.textContent = 
+        `Total Price: Base ₱${basePrice}${shippingText} + Tax ₱${tax.toFixed(2)} = ₱${total.toFixed(2)}`;
     }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("dpe65LoD_aUjUS0CV");
-    })();
-  </script>
+  }
 
-  <footer>
+  // Submit medicine order (unchanged, but now uses updated logic for consistency)
+  function submitOrder(event) {
+    event.preventDefault();
+    const form = document.getElementById('orderForm');
+    const medicineSelect = form.elements["medicineSet"];
+    const shippingSelect = form.elements["shippingMethod"];
+
+    if (!medicineSelect.value || !shippingSelect.value) {
+      alert("Please select both a medicine set and shipping method.");
+      return;
+    }
+
+    const basePrice = parseFloat(medicineSelect.selectedOptions[0].dataset.price);
+    const shippingFee = parseFloat(shippingSelect.selectedOptions[0].dataset.fee);
+    const tax = (basePrice + shippingFee) * 0.12;
+    const total = basePrice + shippingFee + tax;
+
+    const orderData = {
+      fullName: form.elements["fullName"].value,
+      email: form.elements["email"].value,
+      contactNumber: form.elements["contactNumber"].value,
+      address: form.elements["address"].value || "N/A",
+      referenceNumber: form.elements["referenceNumber"].value || "N/A",
+      medicineName: medicineSelect.value,
+      shippingMethod: shippingSelect.value,
+      basePrice,
+      shippingFee,
+      tax: tax.toFixed(2),
+      total: total.toFixed(2)
+    };
+
+    emailjs.send("service_jmbaoq6", "template_ddebyrp", orderData)
+      .then(() => {
+        alert(`✅ Order placed successfully for ${orderData.medicineName}.\nTotal: ₱${orderData.total}\nYou will be contacted soon.`);
+        form.reset();
+        document.querySelector('.total-price').textContent = 'Total Price: ₱0.00';
+      })
+      .catch(error => {
+        alert("❌ Failed to send order. Please try again later.");
+        console.error("EmailJS Error:", error);
+      });
+  }
+
+  // Submit appointment booking (unchanged)
+  function submitAppointment(event) {
+    event.preventDefault();
+    const form = document.getElementById('appointmentForm');
+
+    const appointmentData = {
+      fullName: form.elements["fullName"].value,
+      email: form.elements["email"].value,
+      contactNumber: form.elements["contactNumber"].value,
+      appointmentDate: form.elements["appointmentDate"].value,
+      appointmentTime: form.elements["appointmentTime"].value
+    };
+
+    emailjs.send("service_jmbaoq6", "template_appointment", appointmentData)
+      .then(() => {
+        alert(`✅ Appointment booked successfully on ${appointmentData.appointmentDate} at ${appointmentData.appointmentTime}.\nYou will be contacted soon.`);
+        form.reset();
+      })
+      .catch(error => {
+        alert("❌ Failed to book appointment. Please try again later.");
+        console.error("EmailJS Error:", error);
+      });
+  }
+</script>
+
+<!-- QR Code Modal -->
+<div id="qrModal" class="qr-modal">
+  <div class="qr-modal-content">
+    <span class="close-btn" onclick="closeQRModal()">&times;</span>
+    <h3>Scan to Pay</h3>
+    <p>Use GCash or your preferred app to scan and pay:</p>
+    <img src="https://i.imgur.com/EfcyDsq.jpeg/" alt="GCash QR Code" class="qr-img">
+  </div>
+</div>
+
+<style>
+.qr-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+.qr-modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+.qr-img {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+}
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+// Show QR modal
+function showQRModal() {
+  document.getElementById("qrModal").style.display = "block";
+}
+
+// Close QR modal
+function closeQRModal() {
+  document.getElementById("qrModal").style.display = "none";
+}
+
+// Override existing order submission
+function submitOrder(event) {
+  event.preventDefault();
+  showQRModal(); // Show QR for payment
+}
+
+// Override appointment booking
+function submitAppointment(event) {
+  event.preventDefault();
+  showQRModal(); // Show QR for payment
+}
+</script>
+
+
+ <footer>
     <p>© 2005 Our Clinic | All Rights Reserved</p>
     <div class="footer-links">
       <a href="index.html">Home</a> | 

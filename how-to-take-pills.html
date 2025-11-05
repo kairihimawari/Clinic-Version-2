@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>How to Use Abortion Pills</title>
+  <title>Be One of Our Resellers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,62 +20,56 @@
       <a href="contact.html">Contact</a>
     </nav>
     <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
-</header>
+  </header>
 
-  <!-- Optional banner -->
+  <!-- Banner -->
   <div class="banner">
     <img class="banner-img" src="https://i.imgur.com/FsGJeub.jpeg" alt="Calm background"/>
   </div>
 
   <!-- Main Content -->
   <main class="container">
-    <section class="how-to-use-pills" id="how-to-use-pills">
-      <h1 class="section-title">How to Use Abortion Pills</h1>
+    <section class="reseller-section" id="reseller-section">
+      <h1 class="section-title">Be One of Our Resellers</h1>
+      <p>Join our network of trusted resellers and help provide safe and accessible reproductive health products across the Philippines. Fill out the form below and we’ll get in touch with you soon.</p>
 
-      <h2>How to take the pills</h2>
-      <p><strong>Day 1:</strong> Swallow one mifepristone tablet with water.</p>
-      <p><strong>Day 2 (at least 24 hours later):</strong></p>
-      <ol>
-        <li>Take a pain reliever (e.g., ibuprofen, naproxen; acetaminophen if you can’t take NSAIDs).</li>
-        <li>Place <strong>4 misoprostol tablets</strong> under the tongue or between gum and cheek. Let dissolve for <strong>30 minutes</strong>, then swallow fragments.</li>
-        <li>After <strong>3 hours</strong>, take <strong>2 more misoprostol tablets</strong> the same way.</li>
-        <li>After another <strong>3 hours</strong>, repeat with <strong>2 more misoprostol tablets</strong>.</li>
-      </ol>
-      <p>If bleeding started earlier, continue all steps. Keep any remaining tablets unless a clinician tells you otherwise.</p>
+      <form class="reseller-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
 
-      <h2>What to expect</h2>
-      <ul>
-        <li><strong>Bleeding & cramps</strong> usually start after misoprostol. Heavier than a period, may include clots.</li>
-        <li>It may take up to <strong>24 hours after the last misoprostol dose</strong> for bleeding to begin.</li>
-        <li>Pain varies; strong cramps are common.</li>
-        <li>Bleeding slows once pregnancy passes, then may come and go until your next period (4–8 weeks).</li>
-      </ul>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
 
-      <h2>Pain & comfort tips</h2>
-      <ul>
-        <li>Use over-the-counter pain meds as needed.</li>
-        <li>Heat (heating pad, hot water bottle), rest, music, supportive company help.</li>
-      </ul>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+63 900 000 0000" required>
+        </div>
 
-      <h2>Managing nausea</h2>
-      <ul>
-        <li>Small, frequent snacks and fluids help.</li>
-        <li>Some use doxylamine, dimenhydrinate, bismuth subsalicylate, ginger, or vitamin B6.</li>
-        <li>If you vomit within <strong>15 minutes</strong> of misoprostol, repeat that dose. Later vomiting usually doesn’t matter.</li>
-      </ul>
+        <div class="form-group">
+          <label for="location">City / Province</label>
+          <input type="text" id="location" name="location" placeholder="e.g., Quezon City, Metro Manila" required>
+        </div>
 
-      <h2>What you might see</h2>
-      <ul>
-        <li>Before 9 weeks: blood, clots, maybe small white tissue.</li>
-        <li>9–12 weeks: embryo/fetus visible (1–2.5 inches). At 14 weeks: ~3–3.5 inches.</li>
-      </ul>
+        <div class="form-group">
+          <label for="experience">Do you have experience selling health or wellness products?</label>
+          <select id="experience" name="experience" required>
+            <option value="">Select one</option>
+            <option value="yes">Yes, I have experience</option>
+            <option value="no">No, but I’m willing to learn</option>
+          </select>
+        </div>
 
-      <h2 id="after-care">After the abortion</h2>
-      <ul>
-        <li>If bleeding/cramping happened and symptoms fade within 2 weeks, no routine follow-up needed.</li>
-        <li>Home pregnancy tests are most reliable at <strong>5 weeks</strong> after pills.</li>
-        <li>Resume activities, including sex, when ready. Pregnancy possible as soon as <strong>8 days</strong> after abortion.</li>
-      </ul>
+        <div class="form-group">
+          <label for="message">Why do you want to become a reseller?</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your motivation or background" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Application</button>
+      </form>
     </section>
   </main>
 

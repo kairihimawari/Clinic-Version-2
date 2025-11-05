@@ -30,7 +30,7 @@
   <section class="button-section">
     <a href="pregnancy-age.html" class="action-btn">Pregnancy Calculator</a>
     <a href="services.html" class="action-btn">Get Medicine</a>
-    <a href="how-to-take-pills.html" class="action-btn">How to take Medicine</a>
+    <a href="how-to-take-pills.html" class="action-btn">Be One of Us</a>
   </section>
 
   <main class="container">
@@ -47,59 +47,100 @@
 
   <h2 class="section-title">Proof of our Service</h2>
 
-  <!-- Video Slider -->
-  <div class="video-slider">
-    <div class="video-container">
-      <iframe src="https://player.vimeo.com/video/1113474430" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="video-container">
-      <iframe src="https://player.vimeo.com/video/1113474437" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="video-container">
-      <iframe src="https://player.vimeo.com/video/1113474421" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
+<!-- Picture Gallery -->
+<div class="gallery">
+  <img src="images/proof1.jpg" alt="Service Proof 1">
+  <img src="images/proof2.jpg" alt="Service Proof 2">
+  <img src="images/proof3.jpg" alt="Service Proof 3">
+  <img src="images/proof4.jpg" alt="Service Proof 4">
+  <img src="images/proof5.jpg" alt="Service Proof 5">
+  <img src="images/proof6.jpg" alt="Service Proof 6">
+  <img src="images/proof7.jpg" alt="Service Proof 7">
+  <img src="images/proof8.jpg" alt="Service Proof 8">
+  <img src="images/proof9.jpg" alt="Service Proof 9">
+  <img src="images/proof10.jpg" alt="Service Proof 10">
+</div>
 
-   <div class="counter-box">
-    <h2 class="section-title">Patients Successfully Helped Since 2005:</h2>
-    <p id="patientCounter" class="highlight-number">0</p>
-  </div>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+  justify-items: center;
+}
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Lightbox styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
 <script>
-  let videoIndex = 0;
-  const videos = document.querySelectorAll(".video-container");
+  const galleryImages = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.close');
 
-  function showVideo(index) {
-    videos.forEach((video, i) => {
-      video.style.transform = `translateX(${100 * (i - index)}%)`;
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
     });
-  }
+  });
 
-  setInterval(() => {
-    videoIndex = (videoIndex + 1) % videos.length;
-    showVideo(videoIndex);
-  }, 7000); // 7s per video
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
 
-  showVideo(videoIndex);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
 </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const patientCounter = document.getElementById("patientCounter");
-      let count = 0;
-      const targetCount = 10641;
-      const duration = 3000;
-      const increment = targetCount / (duration / 10);
-      function animateCounter() {
-        if (count < targetCount) {
-          count += increment;
-          if (count > targetCount) count = targetCount;
-          patientCounter.textContent = Math.floor(count).toLocaleString();
-          requestAnimationFrame(animateCounter);
-        }
-      }
-      animateCounter();
-    });
-  </script>
 
   <!-- Testimonials Section -->
   <section class="testimonials container">
