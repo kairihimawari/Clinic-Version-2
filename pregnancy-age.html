@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Private Women’s Health Clinic | Confidential & Secure Care</title>
+  <meta name="description" content="Confidential women’s health services. Secure booking, discreet delivery, professional medical support.">
+  <meta name="keywords" content="women's health clinic, confidential medical care, secure consultation, discreet healthcare">
+  <meta name="author" content="Abortion Clinic Philippines">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abortion Clinic Philippines">
+  <meta property="og:description" content="Professional, discreet, and secure medical services designed to protect your privacy.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.womenonweb.org/en/home-en/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">Abortion Clinic Philippines</div>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav id="navMenu" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="maintenance.html">Services</a>
+      <a href="pregnancy-age.html">Calculator</a>
+      <a href="proof.html">Proof</a>
+      <a href="contact.html">Contact</a>
+      <button id="darkToggle" aria-label="Toggle dark mode" style="background:none;border:none;cursor:pointer;font-size:18px;">
+        🌙
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="calculator-section">
+  <div class="container">
+
+    <div class="calculator-card">
+
+      <div class="calculator-header">
+        <h1>Pregnancy Age Calculator</h1>
+        <p>Enter the first day of your last menstrual period (LMP).</p>
+      </div>
+
+      <div class="calculator-form">
+        <label for="lmpDate">Last Menstrual Period (LMP)</label>
+        <input type="date" id="lmpDate" class="form-input">
+
+        <button id="calculateBtn" class="btn-primary calculate-btn">
+          Calculate Pregnancy Age
+        </button>
+      </div>
+
+      <div id="resultBox" class="result-box">
+
+  <div class="result-weeks">
+    <h2>
+      <span id="weekNumber">0</span> weeks 
+      <span id="dayNumber">0</span> days
+    </h2>
+  </div>
+
+  <div class="result-details">
+    <p id="dueDateResult"></p>
+    <p id="conceptionResult"></p>
+    <span id="trimesterResult" class="trimester-badge"></span>
+  </div>
+
+  <div class="progress-wrapper">
+    <div class="progress-bar">
+      <div id="progressFill" class="progress-fill"></div>
+    </div>
+    <small>Based on 40-week pregnancy timeline</small>
+  </div>
+
+  <div id="educationBox" class="education-box"></div>
+
+</div>
+
+      <div class="disclaimer">
+        <small>
+          This calculator provides an estimate only and does not replace professional medical consultation.
+        </small>
+      </div>
+
+      <div class="cta-block">
+        <a href="contact.html" class="btn-primary">
+          Book Private Consultation
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-content container">
+    <div>
+      <h3>Abortion Clininc Philippines</h3>
+      <p>Discreet and professional medical services.</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Email: abortionclinincphilippines@gmail.com</p>
+      <p>Phone: +639914352751</p>
+    </div>
+
+    <div>
+      <h4>Legal</h4>
+      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p><a href="tems.html">Terms & Conditions</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2005 Abortion Clinic - Philippines
+  </div>
+</footer>
+
+<script src="assets/js/calculator.js"></script>
+</body>
+</html>

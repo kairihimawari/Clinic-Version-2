@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Website Under Maintenance</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#0f172a;
+--gold:#d4af37;
+--muted:#64748b;
+--bg:#f8fafc;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:linear-gradient(120deg,#f8fafc,#eef2f7);
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+/* glowing background */
+
+body::before{
+content:"";
+position:absolute;
+width:800px;
+height:800px;
+background:radial-gradient(circle,rgba(212,175,55,0.25),transparent 70%);
+animation:glowMove 12s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove{
+from{transform:translate(-150px,-80px)}
+to{transform:translate(150px,80px)}
+}
+
+/* particles */
+
+.particle{
+position:absolute;
+width:6px;
+height:6px;
+background:rgba(212,175,55,.6);
+border-radius:50%;
+animation:particleMove linear infinite;
+}
+
+@keyframes particleMove{
+from{transform:translateY(0)}
+to{transform:translateY(-1000px)}
+}
+
+/* card */
+
+.card{
+position:relative;
+z-index:2;
+background:rgba(255,255,255,.9);
+backdrop-filter:blur(8px);
+padding:60px 50px;
+border-radius:24px;
+max-width:600px;
+text-align:center;
+box-shadow:0 35px 80px rgba(0,0,0,.08);
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+
+/* logo */
+
+.logo{
+width:80px;
+margin-bottom:10px;
+}
+
+/* title */
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:38px;
+margin-bottom:10px;
+}
+
+.divider{
+width:80px;
+height:3px;
+background:var(--gold);
+margin:20px auto;
+border-radius:5px;
+}
+
+p{
+color:var(--muted);
+margin-bottom:25px;
+font-size:15px;
+}
+
+/* countdown */
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:18px;
+margin-bottom:25px;
+}
+
+.time-box{
+background:#f1f5f9;
+padding:12px 14px;
+border-radius:10px;
+min-width:65px;
+}
+
+.time-number{
+font-size:20px;
+font-weight:600;
+}
+
+.time-label{
+font-size:11px;
+color:var(--muted);
+}
+
+/* progress */
+
+.progress{
+height:8px;
+background:#e5e7eb;
+border-radius:20px;
+margin:20px 0 30px 0;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#d4af37,#f2d272);
+transition:width 1s;
+}
+
+/* email form */
+
+.notify{
+display:flex;
+gap:10px;
+margin-bottom:25px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.notify input{
+padding:12px;
+border-radius:999px;
+border:1px solid #ddd;
+outline:none;
+min-width:200px;
+}
+
+.notify button{
+padding:12px 22px;
+border-radius:999px;
+border:none;
+background:var(--primary);
+color:white;
+cursor:pointer;
+transition:.25s;
+}
+
+.notify button:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+/* button */
+
+.home-btn{
+display:inline-block;
+padding:12px 28px;
+background:var(--primary);
+color:white;
+text-decoration:none;
+border-radius:999px;
+font-weight:500;
+}
+
+/* mobile */
+
+@media(max-width:600px){
+
+.card{
+padding:40px 25px;
+}
+
+h1{
+font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="logo.png" class="logo" alt="Logo">
+
+<h1>Under Maintenance</h1>
+
+<div class="divider"></div>
+
+<p>
+We’re upgrading the website to improve your experience.
+The site will be back shortly.
+</p>
+
+<div class="countdown">
+
+<div class="time-box">
+<div id="days" class="time-number">0</div>
+<div class="time-label">Days</div>
+</div>
+
+<div class="time-box">
+<div id="hours" class="time-number">0</div>
+<div class="time-label">Hours</div>
+</div>
+
+<div class="time-box">
+<div id="minutes" class="time-number">0</div>
+<div class="time-label">Min</div>
+</div>
+
+<div class="time-box">
+<div id="seconds" class="time-number">0</div>
+<div class="time-label">Sec</div>
+</div>
+
+</div>
+
+<div class="progress">
+<div id="progressBar" class="progress-bar"></div>
+</div>
+
+<div class="notify">
+
+<input type="email" placeholder="Enter your email">
+
+<button>Notify Me</button>
+
+</div>
+
+<a href="index.html" class="home-btn">Return Home</a>
+
+</div>
+
+<script>
+
+/* create particles */
+
+for(let i=0;i<40;i++){
+
+let p=document.createElement("div");
+p.className="particle";
+
+p.style.left=Math.random()*100+"%";
+p.style.bottom="-10px";
+p.style.animationDuration=(8+Math.random()*10)+"s";
+p.style.opacity=Math.random();
+
+document.body.appendChild(p);
+
+}
+
+/* maintenance duration */
+
+const startTime = new Date();
+const endTime = new Date();
+endTime.setHours(endTime.getHours()+6);
+
+/* countdown */
+
+function updateCountdown(){
+
+const now = new Date();
+const diff = endTime - now;
+
+if(diff <= 0){
+
+window.location.href="/";
+
+}
+
+const days = Math.floor(diff / (1000*60*60*24));
+const hours = Math.floor((diff / (1000*60*60)) % 24);
+const minutes = Math.floor((diff / (1000*60)) % 60);
+const seconds = Math.floor((diff / 1000) % 60);
+
+document.getElementById("days").textContent = days;
+document.getElementById("hours").textContent = hours;
+document.getElementById("minutes").textContent = minutes;
+document.getElementById("seconds").textContent = seconds;
+
+/* progress */
+
+const total = endTime - startTime;
+const passed = now - startTime;
+const percent = Math.min((passed/total)*100,100);
+
+document.getElementById("progressBar").style.width = percent + "%";
+
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+</script>
+
+</body>
+</html>

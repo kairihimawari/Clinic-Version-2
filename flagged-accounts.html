@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Private Women’s Health Clinic | Confidential & Secure Care</title>
+  <meta name="description" content="Confidential women’s health services. Secure booking, discreet delivery, professional medical support.">
+  <meta name="keywords" content="women's health clinic, confidential medical care, secure consultation, discreet healthcare">
+  <meta name="author" content="Abortion Clinic Philippines">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abortion Clinic Philippines">
+  <meta property="og:description" content="Professional, discreet, and secure medical services designed to protect your privacy.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.womenonweb.org/en/home-en/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">Abortion Clinic Philippines</div>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav id="navMenu" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="maintenance.html">Services</a>
+      <a href="pregnancy-age.html">Calculator</a>
+      <a href="proof.html">Proof</a>
+      <a href="contact.html">Contact</a>
+      <button id="darkToggle" aria-label="Toggle dark mode" style="background:none;border:none;cursor:pointer;font-size:18px;">
+        🌙
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+  <div class="page-wrapper">
+    <h1>Flagged Installment Accounts</h1>
+
+    <!-- STATS -->
+    <div class="stats1">
+      <div class="stat-box1">
+        <span id="totalCount">0</span>
+        <p>Total</p>
+      </div>
+      <div class="stat-box1">
+        <span id="overdueCount">0</span>
+        <p>Overdue</p>
+      </div>
+      <div class="stat-box1">
+        <span id="reviewCount">0</span>
+        <p>Under Review</p>
+      </div>
+      <div class="stat-box1">
+        <span id="confirmedCount">0</span>
+        <p>Confirmed</p>
+      </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search by name, order ID, phone...">
+
+      <select id="sortSelect">
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="az">Name A–Z</option>
+      </select>
+
+      <div class="status-tabs">
+        <button class="tab active" data-status="all">All</button>
+        <button class="tab" data-status="overdue">Overdue</button>
+        <button class="tab" data-status="review">Under Review</button>
+        <button class="tab" data-status="confirmed">Confirmed</button>
+      </div>
+    </div>
+
+    <div id="caseGrid" class="case-grid"></div>
+    <div id="pagination" class="pagination"></div>
+
+  </div>
+</section>
+</main>
+
+  <script src="assets/js/flagged-accounts.js"></script>
+
+</html>
