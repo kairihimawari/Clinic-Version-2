@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Private Women’s Health Clinic | Confidential & Secure Care</title>
+
+<meta name="description" content="Confidential women’s health services. Secure booking, discreet delivery, professional medical support.">
+
+<link rel="icon" href="assets/images/favicon.ico">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+<div class="container">
+
+<div class="logo">Private Women’s Health Clinic</div>
+
+<button class="hamburger" id="hamburgerBtn">☰</button>
+
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="pregnancy-age.html">Calculator</a>
+<a href="proof.html">Proof</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<section class="section-center">
+
+<h1>Select Service Package</h1>
+
+<div class="medicine-grid">
+
+<div class="medicine-card">
+<div class="package-image">
+<img src="assets/images/package1.jpg">
+</div>
+<h3>Basic Care Package</h3>
+<div class="description">Entry-level women’s health support.</div>
+<div class="price">₱3,500</div>
+
+<button class="btn-primary add-cart"
+data-name="Basic Care Package"
+data-price="3500"
+data-image="assets/images/package1.jpg">
+Add to Cart </button>
+
+</div>
+
+<div class="medicine-card">
+<div class="package-image">
+<img src="assets/images/package2.jpg">
+</div>
+<h3>Advanced Wellness Package</h3>
+<div class="description">Extended consultation & monitoring.</div>
+<div class="price">₱4,500</div>
+
+<button class="btn-primary add-cart"
+data-name="Advanced Wellness Package"
+data-price="4500"
+data-image="assets/images/package2.jpg">
+Add to Cart </button>
+
+</div>
+
+<div class="medicine-card">
+<div class="package-image">
+<img src="assets/images/package3.jpg">
+</div>
+<h3>Premium Health Package</h3>
+<div class="description">Comprehensive consultation support.</div>
+<div class="price">₱5,800</div>
+
+<button class="btn-primary add-cart"
+data-name="Premium Health Package"
+data-price="5800"
+data-image="assets/images/package3.jpg">
+Add to Cart </button>
+
+</div>
+
+<div class="medicine-card">
+<div class="package-image">
+<img src="assets/images/package4.jpg">
+</div>
+<h3>Elite Medical Package</h3>
+<div class="description">Advanced medical supervision.</div>
+<div class="price">₱6,800</div>
+
+<button class="btn-primary add-cart"
+data-name="Elite Medical Package"
+data-price="6800"
+data-image="assets/images/package4.jpg">
+Add to Cart </button>
+
+</div>
+
+<div class="medicine-card">
+<div class="package-image">
+<img src="assets/images/package5.jpg">
+</div>
+<h3>Ultimate Care Package</h3>
+<div class="description">Full premium priority support.</div>
+<div class="price">₱7,800</div>
+
+<button class="btn-primary add-cart"
+data-name="Ultimate Care Package"
+data-price="7800"
+data-image="assets/images/package5.jpg">
+Add to Cart </button>
+
+</div>
+
+</div>
+</section>
+
+<div class="cart-float" id="cartFloat">
+🛒 Cart (<span id="cartCount">0</span>)
+</div>
+
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+<h3>Your Cart</h3>
+</div>
+
+<div id="cartItems"></div>
+
+<div class="cart-footer">
+
+<div class="total-box">
+Total: ₱<span id="cartTotal">0</span>
+</div>
+
+<button id="checkoutBtn" class="btn-primary full-width">
+Proceed to Checkout
+</button>
+
+</div>
+
+</div>
+
+<div id="checkoutModal" class="checkout-modal" style="display:none;">
+
+<div class="premium-modal">
+
+<span id="closeModal" style="cursor:pointer;font-size:22px;">✕</span>
+
+<h2>Secure Checkout</h2>
+
+<form id="checkoutForm">
+
+<input type="text" id="fullName" placeholder="Full Name" required>
+<input type="email" id="emailAddress" placeholder="Email Address" required>
+<input type="text" id="phoneNumber" placeholder="Phone Number" required>
+<input type="text" id="address" placeholder="Full Address" required>
+
+<select id="deliveryMethod" required>
+
+<option value="">Select Delivery Method</option>
+<option value="lbc_paid">LBC - Free Shipping</option>
+<option value="lbc_cod">LBC - Cash on Delivery</option>
+<option value="lalamove">Lalamove (+₱500)</option>
+<option value="international">International (+₱20,000)</option>
+
+</select>
+
+<select id="lbcType" style="display:none;">
+
+<option value="">Select LBC Type</option>
+<option value="door">Door to Door</option>
+<option value="branch">Branch Pickup</option>
+
+</select>
+
+<select id="paymentOption" required>
+
+<option value="full">Full Payment</option>
+<option value="installment">Installment (20% Interest)</option>
+
+</select>
+
+<div>
+Total Payment: ₱<span id="finalTotal">0</span>
+</div>
+
+<button type="submit" class="btn-primary full-width">
+Place Order
+</button>
+
+</form>
+
+</div>
+</div>
+
+<section class="section-center">
+
+<h1>Clinical Procedures</h1>
+
+<div class="medicine-grid">
+
+<div class="medicine-card">
+
+<div class="package-image">
+<img src="assets/images/procedure1.jpg">
+</div>
+
+<h3>In-Clinic Consultation</h3>
+
+<div class="description">
+Private medical consultation
+</div>
+
+<button class="btn-primary"
+onclick="openProcedureModal('In-Clinic Consultation')">
+
+Schedule Procedure
+
+</button>
+
+</div>
+
+<div class="medicine-card">
+
+<div class="package-image">
+<img src="assets/images/procedure2.jpg">
+</div>
+
+<h3>Ultrasound Procedure</h3>
+
+<div class="description">
+Diagnostic ultrasound service
+</div>
+
+<button class="btn-primary"
+onclick="openProcedureModal('Ultrasound Procedure')">
+
+Schedule Procedure
+
+</button>
+
+</div>
+
+<div class="medicine-card">
+
+<div class="package-image">
+<img src="assets/images/procedure3.jpg">
+</div>
+
+<h3>Minor Clinical Procedure</h3>
+
+<div class="description">
+Safe sterile in-clinic procedure
+</div>
+
+<button class="btn-primary"
+onclick="openProcedureModal('Minor Clinical Procedure')">
+
+Schedule Procedure
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<div id="procedureModal" class="modal">
+
+<div class="premium-modal">
+
+<div class="modal-header">
+
+<h2>Book Clinical Procedure</h2>
+
+<button class="close-btn" onclick="closeProcedureModal()">
+<span></span><span></span>
+</button>
+
+</div>
+
+<form id="procedureForm">
+
+<input type="text" id="procedureName" readonly>
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="text" placeholder="Phone Number" required>
+
+<input type="date" id="procedureDate" required>
+
+<select id="procedureTime" required>
+
+<option value="">Select Time Slot</option>
+<option value="9AM">9:00 AM</option>
+<option value="11AM">11:00 AM</option>
+<option value="1PM">1:00 PM</option>
+<option value="3PM">3:00 PM</option>
+<option value="5PM">5:00 PM</option>
+
+</select>
+
+<button type="submit" class="btn-primary full-width">
+Confirm Appointment
+</button>
+
+</form>
+
+</div>
+</div>
+
+</main>
+
+<footer class="footer">
+© 2026 Private Women’s Health Clinic
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("YOUR_PUBLIC_KEY");
+})();
+</script>
+
+<script src="assets/js/services.js"></script>
+
+</body>
+</html>
