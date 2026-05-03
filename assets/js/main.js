@@ -1,10 +1,13 @@
 
 
 // HAMBURGER
-document.getElementById("hamburgerBtn")
-  ?.addEventListener("click", () => {
-    document.getElementById("navMenu")?.classList.toggle("active");
-  });
+const hamburger = document.getElementById("hamburgerBtn");
+const navMenu = document.getElementById("navMenu");
+
+hamburger?.addEventListener("click", () => {
+  navMenu?.classList.toggle("active");
+  hamburger.classList.toggle("active");
+});
 
 // DARK MODE WITH PERSISTENCE
 function toggleDarkMode() {
